@@ -41,6 +41,16 @@ The mechanism uses an established gearbox/repeat-until-success circuit. On succe
 - [Resources and robustness](science/resources-and-robustness.md) — inverse access, arithmetic, memory and coherence costs.
 - [Related work](references/related-work.md) and [bibliography](references/bibliography.bib).
 
+## Learn the result
+
+The single educational anchor is Michael A. Nielsen and Isaac L. Chuang's *Quantum Computation and Quantum Information*, 10th Anniversary Edition (2010). The [learning route](learning/README.md) connects its foundations to the changing-source problem.
+
+- [Thirty milestones](learning/milestones.md) organize the prerequisite concepts and the research argument into a common understanding map.
+- [Anchor and bridge](learning/anchor-and-bridge.md) identify the relevant textbook sections, translate notation and access assumptions, and explain the steps supplied by this project.
+- [Worked walkthrough](learning/walkthrough.md) follows a complete preparation/inverse attempt, its corrected failure and its accumulated phase, then connects that example to the full query law.
+
+The milestone targets are defined by the project. The scientific pages above remain the authoritative home of the exact claims and proofs.
+
 ## Reproduce the numerical checks
 
 ```bash

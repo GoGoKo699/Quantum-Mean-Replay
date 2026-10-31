@@ -37,4 +37,4 @@ Additional fixed-source mean-estimation approaches, including quantum phase esti
 
 Primary sources were checked through 31 October 2026. The controlling comparison is against the explicitly stated non-identical mean-estimation model and the inherited circuit primitives above. The absence of a found identical theorem is not a certificate of exhaustive novelty. The contribution claimed here is the proved conjunction of model, access and asymptotic resource law, with every imported ingredient credited.
 
-The [structured bibliography](bibliography.bib) records the sources used directly by the proofs. Educational background is separate from the primary attribution of the result.
+The [structured bibliography](bibliography.bib) records the research sources and the selected educational anchor. The [Nielsen–Chuang bridge](../learning/anchor-and-bridge.md) explains the textbook's role in the learning route; primary attribution of the research ingredients is given above.
