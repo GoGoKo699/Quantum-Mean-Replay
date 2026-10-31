@@ -1,0 +1,80 @@
+# Quantum Mean Replay
+
+This repository studies the optimal number of physical quantum-sampler calls
+when each fresh source is available for one sequential window with a local
+replay cap. The connected scientific account is organized by topic in science/.
+
+Canonical scientific entrypoints:
+- README.md: question, principal query laws, resource regimes, reading routes,
+  reproduction commands, consequential scope, purpose and contact.
+- science/README.md: connected proof route and dependencies.
+- science/model-and-results.md: access rules, exact quantifiers, rare-event
+  minimax theorem, bounded-mean consequence and interpretation.
+- science/phase-transduction.md: exact success/failure instrument for arbitrary
+  garbage, corrected failure with an entangled reference, and attribution.
+- science/replay-algorithm.md: local amplification, sensitivity, explicit
+  multiscale Ramsey schedule, drift handling, hard query cap and global corollary.
+- science/lower-bounds.md: finite phase twirl, coherent rotation lower bound,
+  actual-call adaptive-window lemma and fixed hard-sequence construction.
+- science/resources-and-robustness.md: physical call, source, memory, gate,
+  arithmetic and coherence accounting, and the matched-inverse error boundary.
+- references/related-work.md: closest results, inherited ingredients and the
+  scope of the comparison.
+- references/bibliography.bib: primary attribution and educational-anchor metadata.
+- verification/README.md: commands, numerical results and their precise limits.
+- verification/run_validation.py: deterministic finite validation program.
+- verification/results.json: recorded fixed-seed output; distinguish it from a new run.
+
+Learning entrypoints:
+- learning/README.md: reader-independent learning routes and coverage.
+- learning/milestones.md: the common project map, exactly M01–M30, in background/
+  preliminaries and narrative/innovation phases; targets, dependencies,
+  conceptual connections and authoritative scientific pointers.
+- learning/anchor-and-bridge.md: the single educational anchor, Nielsen and
+  Chuang's Quantum Computation and Quantum Information, 10th Anniversary
+  Edition (2010); verified sections, notation and access translations, and
+  locally supplied derivations.
+- learning/walkthrough.md: a complete small phase-instrument example and its
+  connection to fresh-source inference, amplification and the query frontier.
+
+Routes by reader intention:
+- Scientific story: README.md, science/model-and-results.md, then the linked
+  proof and resource pages in science/README.md order.
+- Self-directed study: learning/README.md, the anchor bridge and the common
+  M01–M30 map; use the walkthrough for the physical circuit mechanism.
+- Theorem audit: use the exact statement and full authoritative proof, together
+  with the closest-source comparison and explicit access assumptions.
+- Reproduction: verification/README.md, pinned requirements and the documented
+  command; inspect the numerical report and the limitations of finite checks.
+
+Essential scientific distinctions:
+- The local cap m includes forward, inverse and physically invoked controlled
+  calls. Coherent control amplitude does not discount a physical invocation;
+  an actually omitted classical call costs zero.
+- Sources are sequential and cannot be revisited or coherently selected across
+  identities. Each unitary is unchanged inside its own local attempt; garbage
+  and completions may differ arbitrarily between sources.
+- Exact paired inverse access is required. A small forward-mean drift does not
+  establish robustness to an independently imperfect inverse.
+- The rare-event law assumes supplied p0, p in [p0,2p0], 0<p0<=1/16,
+  0<epsilon<=p0/64 and mean drift delta<=epsilon/32.
+- Q1=Theta(p0/epsilon^2); for m>=2,
+  Qm=Theta(max(sqrt(p0)/epsilon,1/(m epsilon))) at constant confidence.
+  The local replay crossover is of order p0^(-1/2).
+- The total budget is a deterministic worst-case physical-query cap. Expected
+  active costs inside the converse are proof devices, not a separate theorem
+  for algorithms constrained only in expected queries.
+- The full frontier is minimax over the allowed local-workspace class. The
+  replay-dependent hard family uses O(log(1/epsilon)) local source qubits.
+- The one-use classical simulation concerns the phase-twirled hard-family
+  average. It does not simulate every arbitrary source or establish the same
+  lower bound under a common known clean-output-column promise.
+- One persistent probe has long coherence across a Ramsey batch. Small quantum
+  memory does not imply constant global coherence depth or a noisy-device gain.
+- A bounded numerical output needs a charged reversible value-to-flag
+  conversion. There is no free QRAM or free classical-data loading.
+- The phase transducer uses the inherited gearbox/RUS mechanism. Primary
+  research sources remain attribution and proof dependencies; they are not
+  additional educational anchors.
+- Finite numerical checks supplement the proofs. They establish neither
+  asymptotic correctness nor practical hardware advantage by themselves.
