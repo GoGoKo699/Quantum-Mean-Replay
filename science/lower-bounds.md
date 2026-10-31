@@ -34,7 +34,7 @@ For the lower bounds we grant the stronger single-call primitive
 =|\mathrm{idle}\rangle\langle\mathrm{idle}|_D\otimes I
  +|\mathrm{fwd}\rangle\langle\mathrm{fwd}|_D\otimes U
  +|\mathrm{inv}\rangle\langle\mathrm{inv}|_D\otimes U^\dagger.
-\tag{1}
+\qquad\text{(1)}
 ```
 
 The three displayed direction labels are mutually orthonormal basis states. The direction register $`D`$ may be coherent. Ordinary forward, inverse, and controlled calls are special cases. Each physical invocation of (1) costs one call, including an invocation with amplitude on its identity branch. A classical decision not to invoke the primitive costs no call. A lower bound under this stronger direction primitive also applies when only the separate controlled versions are supplied.
@@ -48,16 +48,16 @@ All hard inputs below have exactly equal means within a sequence. They therefore
 **Theorem 1.** Suppose
 
 ```math
-0<p_0\le\frac1{16},\qquad
+0\lt p_0\le\frac1{16},\qquad
 0<\epsilon\le\frac{p_0}{64}.
-\tag{2}
+\qquad\text{(2)}
 ```
 
 Assume that, for every valid fixed source sequence with common mean $`p\in[p_0,2p_0]`$, the protocol outputs $`\widehat p`$ satisfying
 
 ```math
 \Pr\{ |\widehat p-p|\le\epsilon\}\ge\frac23.
-\tag{3}
+\qquad\text{(3)}
 ```
 
 Then:
@@ -66,14 +66,14 @@ Then:
 
    ```math
    Q\ge\frac{p_0}{81\epsilon^2}.
-   \tag{4}
+   \qquad\text{(4)}
    ```
 
 2. For every $`m\ge1`$, one-qubit hard sources imply
 
    ```math
    Q\ge\frac{\sqrt{p_0}}{9\epsilon}.
-   \tag{5}
+   \qquad\text{(5)}
    ```
 
 3. In the arbitrary-workspace source class, every $`m\ge1`$ obeys the combined bound
@@ -84,7 +84,7 @@ Then:
       \frac{\sqrt{p_0}}{\epsilon},
       \frac1{m\epsilon}
    \right\}.
-   \tag{6}
+   \qquad\text{(6)}
    ```
 
 The constants are deliberately conservative. The proof of the second term in (6) uses a source of dimension $`2n`$, where $`n=\lfloor1/(4\epsilon)\rfloor`$. A qubit implementation embeds this space in fewer than $`4n`$ dimensions. The same hard family embeds in larger workspaces by extending the oracle with an identity action on the unused subspace.
@@ -109,7 +109,7 @@ If the full computation is purified, including all measurement records and disca
 |\langle\Psi_0|\Psi_1\rangle|
 \le\sqrt{1-\frac19}
 =\frac{2\sqrt2}{3}.
-\tag{7}
+\qquad\text{(7)}
 ```
 
 Keeping these environments is only a proof device. It gives the algorithm no additional access to its discarded information.
@@ -125,7 +125,7 @@ R_p=
 \sqrt{1-p}&-\sqrt p\\
 \sqrt p&\sqrt{1-p}
 \end{pmatrix}.
-\tag{8}
+\qquad\text{(8)}
 ```
 
 Take every source in a sequence to be the same $`R_p`$. These are legal fixed sequences for every local replay cap. Compare
@@ -146,7 +146,7 @@ we have
 0<\theta(q)-\theta(p)
 \le\frac{4\epsilon}{\sqrt{2p_0}}
 <\frac{3\epsilon}{\sqrt{p_0}}.
-\tag{9}
+\qquad\text{(9)}
 ```
 
 The operator-norm difference of the rotations is
@@ -155,7 +155,7 @@ The operator-norm difference of the rotations is
 \|R_q-R_p\|
 =2\left|\sin\frac{\theta(q)-\theta(p)}2\right|
 \le\theta(q)-\theta(p).
-\tag{10}
+\qquad\text{(10)}
 ```
 
 The same norm bound holds for their inverses and for the coherent direction selectors (1), because the difference is block diagonal in the direction register.
@@ -165,7 +165,7 @@ Purify the algorithm and pad its **global physical-call count** to $`Q`$ using i
 ```math
 Q\|R_q-R_p\|
 \le\frac{3Q\epsilon}{\sqrt{p_0}}.
-\tag{11}
+\qquad\text{(11)}
 ```
 
 The testing advantage from Section 2 requires this to be at least $`1/3`$, proving (5). This global padding is legitimate because it uses at most $`Q`$ slots. Padding each source separately to $`m`$ **charged** slots would not prove the sharper replay-dependent statement below.
@@ -186,7 +186,7 @@ uniformly, and define
 
 ```math
 U_{a,b,c;p}=i^c Z^a R_p Z^b.
-\tag{12}
+\qquad\text{(12)}
 ```
 
 Each draw specifies one fixed unitary and its exact inverse. It is not redrawn during a call. Its output flag probability on $`|0\rangle`$ is exactly $`p`$, regardless of $`a,b,c`$. The phases of its two output components need not agree between sources.
@@ -208,7 +208,7 @@ The identity, forward, and inverse blocks acquire phases $`1,i^c,i^{-c}`$, respe
 ```math
 \frac14\sum_{c=0}^3 i^{rc}=0,
 \qquad r\in\{-2,-1,1,2\}.
-\tag{13}
+\qquad\text{(13)}
 ```
 
 Averaging over $`c`$ removes all off-diagonal blocks between the three direction labels. This covers a coherent superposition of forward and inverse calls, as well as ordinary use/no-use control within a physically invoked call.
@@ -228,7 +228,7 @@ For the forward block, averaging the right factor $`Z^b`$ first dephases the inp
 ```math
 \mathcal B_p(\rho)
 =(1-p)\Delta(\rho)+pX\Delta(\rho)X.
-\tag{14}
+\qquad\text{(14)}
 ```
 
 For the inverse block,
@@ -259,7 +259,7 @@ The protocol is required to work for every fixed phase sequence. It must therefo
 ```math
 D(\rho_p,\rho_q)
 \le d_{\rm TV}(P_p^{\otimes Q},P_q^{\otimes Q}).
-\tag{15}
+\qquad\text{(15)}
 ```
 
 For completeness, the required classical distance bound follows directly from Cauchy–Schwarz. If two distributions have affinity $`A=\sum_x\sqrt{P(x)Q(x)}`$, then
@@ -270,7 +270,7 @@ d_{\rm TV}(P,Q)
 \sqrt{\left(\sum_x(\sqrt{P(x)}-\sqrt{Q(x)})^2\right)
       \left(\sum_x(\sqrt{P(x)}+\sqrt{Q(x)})^2\right)}
 =\sqrt{1-A^2}.
-\tag{16}
+\qquad\text{(16)}
 ```
 
 The single-coin affinity is
@@ -289,7 +289,7 @@ D(\rho_p,\rho_q)
 &\le\sqrt Q\,\sin(\theta(q)-\theta(p))\\
 &\le\frac{3\sqrt Q\,\epsilon}{\sqrt{p_0}}.
 \end{aligned}
-\tag{17}
+\qquad\text{(17)}
 ```
 
 The required trace distance $`1/3`$ proves (4).
@@ -304,7 +304,7 @@ Let $`s\in\{0,1\}^n`$ have $`h`$ zero positions, collected in $`\mathcal Z`$. In
 
 ```math
 O_s|j,b\rangle=|j,b\oplus s_j\rangle.
-\tag{18}
+\qquad\text{(18)}
 ```
 
 We allow arbitrary controls on this query. A source window contains at most $`m`$ actual calls. After purifying measurements, represent it using $`m`$ possible call slots. Let $`P_\ell`$ be the projector onto the classical histories in which a physical call occurs in slot $`\ell`$. Once a branch leaves the window, its remaining slots are inactive. This padding is an analytical representation: cost is the expected number of active calls, not $`m`$.
@@ -329,7 +329,7 @@ b_\ell^2&=\|P_\ell\overline\psi_\ell\|^2,
 &\overline C&=\sum_{\ell=1}^m b_\ell^2,\\
 C_i&=\sum_{\ell=1}^m\|P_\ell\psi_{i,\ell}\|^2.
 \end{aligned}
-\tag{19}
+\qquad\text{(19)}
 ```
 
 These are expected numbers of actual physical calls within this window under the corresponding states and oracle. Let the real-overlap loss be
@@ -339,7 +339,7 @@ These are expected numbers of actual physical calls within this window under the
 =\operatorname{Re}\langle\psi_0|\psi_1\rangle
  -\operatorname{Re}
    \langle\psi_{0,\mathrm{out}}|\psi_{i,\mathrm{out}}\rangle.
-\tag{20}
+\qquad\text{(20)}
 ```
 
 It may be negative.
@@ -348,7 +348,7 @@ It may be negative.
 
 ```math
 \Delta_i\le\frac{4m}{h}(C_0+C_i).
-\tag{21}
+\qquad\text{(21)}
 ```
 
 ### 5.1 Comparing an alternative to the auxiliary baseline
@@ -365,7 +365,7 @@ The two Boolean queries differ only at index $`i`$, and their difference has ope
 
 ```math
 \delta_{i,\ell}\le2\sum_{j<\ell}x_{i,j}.
-\tag{22}
+\qquad\text{(22)}
 ```
 
 The input states of these two runs are identical, namely $`\psi_1`$, so there is no initial-state term in this bound. The index projectors are mutually orthogonal, hence
@@ -381,7 +381,7 @@ Cauchy–Schwarz in the sum over slots yields
 \frac1h\sum_{i\in\mathcal Z}\delta_{i,\ell}^2
 \le\frac{4m}{h}\sum_{j<\ell}b_j^2
 \le\frac{4m}{h}\overline C.
-\tag{23}
+\qquad\text{(23)}
 ```
 
 For any projector $`P`$ and normalized vectors $`u,v`$, writing $`u=v+(u-v)`$ gives
@@ -389,7 +389,7 @@ For any projector $`P`$ and normalized vectors $`u,v`$, writing $`u=v+(u-v)`$ gi
 ```math
 \big|\|Pu\|^2-\|Pv\|^2\big|
 \le2\|Pv\|\,\|u-v\|+\|u-v\|^2.
-\tag{24}
+\qquad\text{(24)}
 ```
 
 Apply this to each active-call projector, average over $`i`$, and sum over slots. Equations (23) and $`\sum_\ell b_\ell\le\sqrt{m\overline C}`$ give
@@ -405,14 +405,14 @@ Apply this to each active-call projector, average over $`i`$, and sum over slots
 &\le
  \left(\frac{4m}{\sqrt h}+\frac{4m^2}{h}\right)\overline C.
 \end{aligned}
-\tag{25}
+\qquad\text{(25)}
 ```
 
 If $`m\le\sqrt h/16`$, the coefficient is at most $`17/64<1/2`$. In particular,
 
 ```math
 \frac1h\sum_i C_i\ge\frac{\overline C}{2}.
-\tag{26}
+\qquad\text{(26)}
 ```
 
 Thus the auxiliary trajectory cannot have a large expected call cost while every actual neighboring alternative has negligible cost. This is the step that permits actual-call accounting under adaptive stopping.
@@ -449,7 +449,7 @@ The sum of the baseline terms satisfies
  \langle\psi_{0,\ell}|F_{i,\ell}|\overline\psi_\ell\rangle
 \right|
 \le2a_\ell b_\ell,
-\tag{27}
+\qquad\text{(27)}
 ```
 
 because $`\sum_iF_{i,\ell}`$ still has norm at most two on the orthogonal index sectors. For the remaining terms, (22) gives
@@ -466,7 +466,7 @@ because $`\sum_iF_{i,\ell}`$ still has norm at most two on the orthogonal index 
    \|\Pi_iP_\ell\psi_{0,\ell}\|\,x_{i,j}\\
 &\le4a_\ell\sum_{j<\ell}b_j.
 \end{aligned}
-\tag{28}
+\qquad\text{(28)}
 ```
 
 The last step is Cauchy–Schwarz over the index positions. Summing the one-slot changes and then taking the real part proves
@@ -484,7 +484,7 @@ The last step is Cauchy–Schwarz over the index positions. Summing the one-slot
 &\le\frac{4m}{h}\sqrt{C_0\overline C}\\
 &\le\frac{2m}{h}(C_0+\overline C).
 \end{aligned}
-\tag{29}
+\qquad\text{(29)}
 ```
 
 This is a bound on the average **real decrease**. We do not infer a small absolute summand from the absolute value of an average complex number.
@@ -515,7 +515,7 @@ Choose
 n=\left\lfloor\frac1{4\epsilon}\right\rfloor,
 \qquad k=\lceil np_0\rceil,
 \qquad h=n-k.
-\tag{30}
+\qquad\text{(30)}
 ```
 
 Under (2),
@@ -524,14 +524,14 @@ Under (2),
 \frac1{8\epsilon}\le n\le\frac1{4\epsilon},
 \qquad np_0\ge8,
 \qquad h\ge\frac n2\ge\frac1{16\epsilon}.
-\tag{31}
+\qquad\text{(31)}
 ```
 
 Fix any weight-$`k`$ string $`s`$. Let $`W_n`$ be a known unitary preparing the uniform index state from $`|0\rangle`$, and define
 
 ```math
 U_s=O_s(W_n\otimes I).
-\tag{32}
+\qquad\text{(32)}
 ```
 
 The unitary $`W_n`$ depends only on the known integer $`n`$. It is an exact uniform-state preparer on this known index space, not a claim that a tensor product of Hadamards prepares a non-power-of-two uniform state. No unknown input data or QRAM is used. Then
@@ -539,7 +539,7 @@ The unitary $`W_n`$ depends only on the known integer $`n`$. It is an exact unif
 ```math
 U_s|0,0\rangle
 =\frac1{\sqrt n}\sum_{j=0}^{n-1}|j,s_j\rangle.
-\tag{33}
+\qquad\text{(33)}
 ```
 
 The output flag is Bernoulli with mean $`k/n`$; the index is garbage. Flipping any zero position changes the mean to $`(k+1)/n`$. Both belong to the required scale interval, because
@@ -547,7 +547,7 @@ The output flag is Bernoulli with mean $`k/n`$; the index is garbage. Flipping a
 ```math
 p_0\le\frac{k}{n}<\frac{k+1}{n}
 \le p_0+\frac2n\le\frac54p_0<2p_0.
-\tag{34}
+\qquad\text{(34)}
 ```
 
 Their separation is $`1/n\ge4\epsilon`$.
@@ -573,7 +573,7 @@ Write $`C_{0,t}`$ and $`C_{1,t}`$ for the expected numbers of actual calls in wi
 ```math
 \operatorname{Re}\langle\Psi_0|\Psi_1\rangle
 \ge1-\frac{4m}{h}\sum_t(C_{0,t}+C_{1,t}).
-\tag{35}
+\qquad\text{(35)}
 ```
 
 The auxiliary baseline costs $`\overline C`$ have disappeared. Each sum of actual expected costs is bounded by the pathwise cap $`Q`$, so
@@ -581,7 +581,7 @@ The auxiliary baseline costs $`\overline C`$ have disappeared. Each sum of actua
 ```math
 \operatorname{Re}\langle\Psi_0|\Psi_1\rangle
 \ge1-\frac{8mQ}{h}.
-\tag{36}
+\qquad\text{(36)}
 ```
 
 The oracle lists used to evaluate these costs are valid inputs. Choosing their later entries does not change earlier prefix costs.
@@ -595,7 +595,7 @@ Q\ge
 \left(1-\frac{2\sqrt2}{3}\right)\frac{h}{8m}
 >\frac{h}{144m}
 \ge\frac1{2304m\epsilon}.
-\tag{37}
+\qquad\text{(37)}
 ```
 
 For larger $`m`$, use (31) to obtain
@@ -605,7 +605,7 @@ For larger $`m`$, use (31) to obtain
 <\frac{16}{\epsilon\sqrt h}
 \le\frac{64}{\sqrt\epsilon}
 \le8\frac{\sqrt{p_0}}{\epsilon},
-\tag{38}
+\qquad\text{(38)}
 ```
 
 where the last inequality uses $`\epsilon\le p_0/64`$. Thus the ordinary bound (5) already controls both terms of the maximum in this regime. Combining (5), (37), and (38) proves the conservative uniform constant in (6).

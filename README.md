@@ -20,7 +20,7 @@ Q_m=\Theta\!\left(
 \right),\qquad m\ge2.
 ```
 
-The theorem assumes $`0<p_0\le1/16`$, $`0<\epsilon\le p_0/64`$, exact inverse access within each window, and source means satisfying $`|p_i-p|\le\epsilon/32`$. A controlled physical invocation costs one query. Sources cannot be revisited or coherently selected across identities. The lower bound allows unrestricted persistent quantum memory and takes a worst case over local workspace dimensions. See the [complete model and theorem](science/model-and-results.md).
+The theorem assumes $`0\lt p_0\le1/16`$, $`0<\epsilon\le p_0/64`$, exact inverse access within each window, and source means satisfying $`|p_i-p|\le\epsilon/32`$. A controlled physical invocation costs one query. Sources cannot be revisited or coherently selected across identities. The lower bound allows unrestricted persistent quantum memory and takes a worst case over local workspace dimensions. See the [complete model and theorem](science/model-and-results.md).
 
 | Resource regime | Consequence |
 |---|---|

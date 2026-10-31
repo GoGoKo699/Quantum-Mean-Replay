@@ -14,14 +14,14 @@ q=\langle0|A^\dagger\Pi A|0\rangle,
 S=I-2\Pi,
 \qquad
 R=A^\dagger S A.
-\tag{1}
+\qquad\text{(1)}
 ```
 
 Thus $`S`$ and $`R`$ are Hermitian involutions, and
 
 ```math
 z=\langle0|R|0\rangle=1-2q\in[-1,1].
-\tag{2}
+\qquad\text{(2)}
 ```
 
 The retained probe $`B`$ is a qubit, with Pauli operator $`Z_B`$. An untouched reference system $`E`$ may be entangled with the probe. No assumption is made about that entanglement or the dimension of $`E`$.
@@ -30,7 +30,7 @@ The available operations are $`A`$, its exact inverse, and the known coupling
 
 ```math
 \exp\!\left(\frac{i\pi}{4}S\otimes Z_B\right).
-\tag{3}
+\qquad\text{(3)}
 ```
 
 For a Bernoulli output flag, $`S`$ is the Pauli $`Z`$ of that flag, so (3) is a Clifford gate. For a more general supplied projector, implementing (3) is a separate resource that must be charged. A description of $`A`$ or of its unknown output garbage is not required.
@@ -43,21 +43,21 @@ For a Bernoulli output flag, $`S`$ is the Pauli $`Z`$ of that flag, so (3) is a 
 V=(A^\dagger\otimes I_B)
 \exp\!\left(\frac{i\pi}{4}S\otimes Z_B\right)
 (A\otimes I_B)
-\tag{4}
+\qquad\text{(4)}
 ```
 
 to $`|0\rangle_W`$ and the probe. Measure $`W`$ in the computational basis. The all-zero outcome has probability
 
 ```math
 s(q)=\frac{1+z^2}{2}=(1-q)^2+q^2\ge\frac12,
-\tag{5}
+\qquad\text{(5)}
 ```
 
 independent of the probe and reference state. Conditioned on this outcome, the probe undergoes
 
 ```math
 T(q)=\exp\!\bigl(i\arctan(1-2q)Z_B\bigr).
-\tag{6}
+\qquad\text{(6)}
 ```
 
 Every other measurement outcome applies $`Z_B`$, up to a scalar depending only on the sampler and the recorded outcome. Applying the known correction $`Z_B`$ restores the incoming probe and its reference entanglement exactly.
@@ -66,7 +66,7 @@ Every other measurement outcome applies $`Z_B`$, up to a scalar depending only o
 
 ```math
 V=\frac{I+iR\otimes Z_B}{\sqrt2}.
-\tag{7}
+\qquad\text{(7)}
 ```
 
 Decompose
@@ -77,7 +77,7 @@ R|0\rangle=z|0\rangle+|w\rangle,
 \langle0|w\rangle=0,
 \qquad
 \|w\|^2=1-z^2.
-\tag{8}
+\qquad\text{(8)}
 ```
 
 The last identity follows from $`R^\dagger R=I`$. For every pure probe-reference state $`|\Psi\rangle_{BE}`$,
@@ -91,7 +91,7 @@ The last identity follows from $`R^\dagger R=I`$. For every pure probe-reference
 &+\frac{i}{\sqrt2}|w\rangle_W
 (Z_B\otimes I_E)|\Psi\rangle_{BE}.
 \end{aligned}
-\tag{9}
+\qquad\text{(9)}
 ```
 
 Consequently, the probe Kraus operators for the workspace measurement are
@@ -101,7 +101,7 @@ K_0=\frac{I+i zZ_B}{\sqrt2},
 \qquad
 K_j=\frac{i\langle j|w\rangle}{\sqrt2}Z_B
 \quad(j\ne0).
-\tag{10}
+\qquad\text{(10)}
 ```
 
 They obey
@@ -110,7 +110,7 @@ They obey
 K_0^\dagger K_0=s(q)I_B,
 \qquad
 K_j^\dagger K_j=\frac{|\langle j|w\rangle|^2}{2}I_B.
-\tag{11}
+\qquad\text{(11)}
 ```
 
 The complete outcome distribution is therefore independent of the input on $`BE`$. For the all-zero outcome,
@@ -119,7 +119,7 @@ The complete outcome distribution is therefore independent of the input on $`BE`
 \frac{K_0}{\sqrt{s(q)}}
 =\frac{I+i zZ_B}{\sqrt{1+z^2}}
 =\exp\!\bigl(i\arctan(z)Z_B\bigr).
-\tag{12}
+\qquad\text{(12)}
 ```
 
 For every nonzero outcome, normalizing removes the scalar in (10); the remaining operation is $`Z_B`$, up to an irrelevant global phase. Its correction acts only on $`B`$ and restores $`|\Psi\rangle_{BE}`$. The mixed-state statement follows by purification or linearity. $`\square`$
@@ -133,7 +133,7 @@ Equivalently, for every density operator $`\rho_{BE}`$, the two coarse-grained b
 \mathcal I_{\rm failure}(\rho_{BE})
 &=(1-s(q))(Z_B\otimes I_E)\rho_{BE}(Z_B\otimes I_E).
 \end{aligned}
-\tag{13}
+\qquad\text{(13)}
 ```
 
 After the failure correction, the second branch is simply $`(1-s(q))\rho_{BE}`$. Measuring every workspace qubit and checking whether the classical string is zero is a harmless refinement of this two-outcome instrument. No coherent approximate zero-test is needed.
@@ -152,7 +152,7 @@ If the probabilities differ, a probe initialized in $`|+\rangle`$ instead accumu
 \Phi=\sum_{a=1}^{L}\varphi(q_{i_a}),
 \qquad
 \varphi(q)=2\arctan(1-2q),
-\tag{14}
+\qquad\text{(14)}
 ```
 
 where $`i_1,\ldots,i_L`$ are the accepted sources. The measured expectations are
@@ -161,7 +161,7 @@ where $`i_1,\ldots,i_L`$ are the accepted sources. The measured expectations are
 \langle X_B\rangle=\cos\Phi,
 \qquad
 \langle -Y_B\rangle=\sin\Phi.
-\tag{15}
+\qquad\text{(15)}
 ```
 
 The minus sign in the second observable follows from the convention $`T(q)=e^{+i\varphi(q)Z_B/2}`$. The companion [estimation algorithm](replay-algorithm.md) uses these direct Ramsey measurements.
@@ -184,14 +184,14 @@ The original gearbox uses a controlled $`-iX_B`$ on the marked subspace between 
 
 ```math
 (1-q)I_B-iqX_B.
-\tag{16}
+\qquad\text{(16)}
 ```
 
 After normalization, this is an $`X`$ rotation of angle
 
 ```math
 \alpha(q)=\arctan\frac{q}{1-q},
-\tag{17}
+\qquad\text{(17)}
 ```
 
 with the same success probability $`(1-q)^2+q^2`$ and known correctable failure operations. For a single-qubit input rotation with $`q=\sin^2\theta`$, the angle is $`\arctan(\tan^2\theta)`$, the usual gearbox formula. [1,2]
@@ -200,7 +200,7 @@ The identity
 
 ```math
 \arctan(1-2q)=\frac\pi4-\alpha(q)
-\tag{18}
+\qquad\text{(18)}
 ```
 
 relates (6) to that formulation by a fixed known rotation and a change of probe basis. The endpoint $`q=1`$ is understood by continuity. Extending the proof from a prescribed product of input rotations to an arbitrary preparation $`A`$ and known projector $`\Pi`$ gives (9); the subsequent fresh-source estimation theorem is the resource question studied here.
@@ -212,7 +212,7 @@ A reversible sampler with a value register can encode an expectation in a Bernou
 ```math
 C_f|x\rangle|0\rangle
 =|x\rangle\left(\sqrt{1-f(x)}|0\rangle+\sqrt{f(x)}|1\rangle\right).
-\tag{19}
+\qquad\text{(19)}
 ```
 
 Then $`A=C_f(U\otimes I)`$ has marked probability $`q=\mathbb E[f(X)]`$. Its preparation contains one primitive call to $`U`$; its inverse contains one call to $`U^\dagger`$. The arithmetic and rotation synthesis implementing $`C_f`$ must also be charged. This is the usual coherent bounded-value conversion used in quantum mean estimation. [3,4]
@@ -221,7 +221,7 @@ Finite precision in that known conversion need not become an unstructured error 
 
 ```math
 \sup_x|\widetilde f(x)-f(x)|\le\tau,
-\tag{20}
+\qquad\text{(20)}
 ```
 
 the encoded mean changes by at most $`\tau`$. It can therefore be included in the allowed mean drift. This argument does not cover an inaccurate physical inverse of the unknown sampler or general gate noise. The full resource distinctions are discussed in [resources-and-robustness.md](resources-and-robustness.md).

@@ -6,7 +6,7 @@ This file proves the upper bound
 Q=O\!\left(
 \max\left\{\frac{\sqrt{p_0}}{\epsilon},\frac{1}{m\epsilon}\right\}
 \log\frac1\beta\right)
-\tag{1}
+\qquad\text{(1)}
 ```
 
 for a stream of Bernoulli samplers whose means lie near one common target. Each individual sampler is used at most $`m`$ times, counting its forward and inverse calls together. The algorithm retains one probe qubit across source windows, while measuring and discarding each source workspace after a local preparation/unpreparation pair.
@@ -19,7 +19,7 @@ Each current source is an unknown unitary $`U_i`$ on an initialized workspace $`
 
 ```math
 p_i=\langle0|U_i^\dagger\Pi U_i|0\rangle.
-\tag{2}
+\qquad\text{(2)}
 ```
 
 The source may have arbitrary output garbage and an arbitrary unitary completion away from $`|0\rangle`$. Its exact inverse is available during its current source window. After moving to the next source, the algorithm does not return to it. A primitive call means one physical application of $`U_i`$, $`U_i^\dagger`$, or a controlled version; the upper bound below needs only the uncontrolled forward and inverse calls. There is no coherent SELECT over source identities.
@@ -27,11 +27,11 @@ The source may have arbitrary output garbage and an arbitrary unitary completion
 **Theorem 1 — rare-event upper bound.** Let
 
 ```math
-0<p_0\le\frac1{16},\qquad
+0\lt p_0\le\frac1{16},\qquad
 p\in[p_0,2p_0],\qquad
 0<\epsilon\le\frac{p_0}{64},\qquad
 0<\beta\le\frac12,
-\tag{3}
+\qquad\text{(3)}
 ```
 
 where $`p_0`$ is supplied classically and $`p`$ is unknown. Suppose every source obeys
@@ -40,7 +40,7 @@ where $`p_0`$ is supplied classically and $`p`$ is unknown. Suppose every source
 |p_i-p|\le\delta,
 \qquad
 \delta\le\frac{\epsilon}{32}.
-\tag{4}
+\qquad\text{(4)}
 ```
 
 For every integer $`m\ge2`$, there is an estimator with success probability at least $`1-\beta`$ and additive error at most $`\epsilon`$. It uses at most $`m`$ primitive calls to each source and satisfies (1), with a deterministic upper bound on total actual calls, including all failed attempts. A supply of $`N`$ fresh sources, with $`N`$ specified by (20), (24), (25) and (35), suffices.
@@ -57,7 +57,7 @@ Define
 B=\min\left\{\frac m2,\frac{1}{4\sqrt{p_0}}\right\},
 \qquad
 k=\max\{r\in\mathbb N:r\text{ is odd and }r\le B\}.
-\tag{5}
+\qquad\text{(5)}
 ```
 
 Because $`m\ge2`$ and $`p_0\le1/16`$, one has $`B\ge1`$, so $`k`$ exists. In particular,
@@ -68,7 +68,7 @@ Because $`m\ge2`$ and $`p_0\le1/16`$, one has $`B\ge1`$, so $`k`$ exists. In par
 k^2p_0\le\frac1{16},
 \qquad
 k\ge\frac1{12}\min\{m,p_0^{-1/2}\}.
-\tag{6}
+\qquad\text{(6)}
 ```
 
 For the last inequality, the largest positive odd integer at most $`B`$ is at least $`B/3`$, and
@@ -86,14 +86,14 @@ R_0=I-2|0\rangle\langle0|,
 S=I-2\Pi,
 \qquad
 G_i=-U_iR_0U_i^\dagger S,
-\tag{7}
+\qquad\text{(7)}
 ```
 
 and define
 
 ```math
 A_{i,k}=G_i^tU_i.
-\tag{8}
+\qquad\text{(8)}
 ```
 
 This preparation uses exactly $`k`$ primitive calls. Its inverse also uses exactly $`k`$ calls. The known reflections $`R_0`$ and $`S`$ have their ordinary implementation costs; they are not extra sampler queries.
@@ -103,7 +103,7 @@ For $`\theta_i=\arcsin\sqrt{p_i}`$, decompose the prepared state into normalized
 ```math
 U_i|0\rangle=\cos\theta_i\,|b_i\rangle+
 \sin\theta_i\,|g_i\rangle.
-\tag{9}
+\qquad\text{(9)}
 ```
 
 Here $`\Pi|b_i\rangle=0`$ and $`\Pi|g_i\rangle=|g_i\rangle`$. In this two-dimensional plane, $`G_i`$ is the rotation by $`2\theta_i`$. Consequently,
@@ -114,7 +114,7 @@ A_{i,k}|0\rangle
 \sin(k\theta_i)|g_i\rangle,
 \qquad
 q_k(p_i)=\sin^2(k\theta_i).
-\tag{10}
+\qquad\text{(10)}
 ```
 
 This is the standard amplitude-amplification identity. [1] The plane may be completely different for the next source. All amplification in (8) occurs before leaving the current source, so no alignment of different sources' Grover planes is assumed.
@@ -125,7 +125,7 @@ Both the target interval and all the actual source means lie in
 
 ```math
 I=[p_0/2,3p_0].
-\tag{11}
+\qquad\text{(11)}
 ```
 
 Indeed, (3)–(4) give $`\delta\le p_0/2048`$. For $`r\in I`$, write $`\theta=\arcsin\sqrt r`$. The elementary bound $`\arcsin x\le(\pi/2)x`$, together with (5), gives
@@ -134,14 +134,14 @@ Indeed, (3)–(4) give $`\delta\le p_0/2048`$. For $`r\in I`$, write $`\theta=\a
 k\theta\le
 \frac{1}{4\sqrt{p_0}}\frac\pi2\sqrt{3p_0}
 =\frac{\pi\sqrt3}{8}<\frac\pi4.
-\tag{12}
+\qquad\text{(12)}
 ```
 
-Thus $`q_k`$ stays in its first monotone lobe and satisfies $`0<q_k(r)<1/2`$. Differentiating,
+Thus $`q_k`$ stays in its first monotone lobe and satisfies $`0\lt q_k(r)<1/2`$. Differentiating,
 
 ```math
 q_k'(r)=k\frac{\sin(2k\theta)}{\sin(2\theta)}.
-\tag{13}
+\qquad\text{(13)}
 ```
 
 The sine chord bound supplies the lower inequality below. The upper inequality follows because $`\sin x/x`$ is decreasing on $`(0,\pi)`$, with both arguments here in $`(0,\pi/2)`$:
@@ -149,7 +149,7 @@ The sine chord bound supplies the lower inequality below. The upper inequality f
 ```math
 \frac{2}{\pi}k^2\le q_k'(r)\le k^2
 \qquad(r\in I).
-\tag{14}
+\qquad\text{(14)}
 ```
 
 No approximation $`q_k(r)\approx k^2r`$ is needed in the algorithm or its proof.
@@ -164,14 +164,14 @@ After the known failure correction, the attempt either leaves the probe unchange
 \exp\!\left(\frac i2 f_k(p_i)Z\right),
 \qquad
 f_k(r)=2\arctan\!\left(1-2\sin^2(k\arcsin\sqrt r)\right).
-\tag{15}
+\qquad\text{(15)}
 ```
 
 Its conditional success probability is
 
 ```math
 s_i=(1-q_k(p_i))^2+q_k(p_i)^2\ge\frac12.
-\tag{16}
+\qquad\text{(16)}
 ```
 
 The complete outcome distribution is independent of the incoming probe and any reference entangled with it. The workspace can be measured and discarded after either outcome, and the next attempt uses a fresh source.
@@ -182,7 +182,7 @@ Set
 a=\frac4\pi,
 \qquad
 \varphi=f_k(p).
-\tag{17}
+\qquad\text{(17)}
 ```
 
 Since $`q_k(r)\in[0,1/2]`$, (14) implies
@@ -190,14 +190,14 @@ Since $`q_k(r)\in[0,1/2]`$, (14) implies
 ```math
 a k^2\le |f_k'(r)|\le4k^2
 \qquad(r\in I),
-\tag{18}
+\qquad\text{(18)}
 ```
 
 and $`f_k`$ is decreasing. In particular, every accepted phase obeys
 
 ```math
 |f_k(p_i)-\varphi|\le4k^2\delta.
-\tag{19}
+\qquad\text{(19)}
 ```
 
 This is a pointwise statement for every accepted source. It remains true even though acceptance probabilities depend on $`p_i`$, so selecting successful sources can change their relative frequencies.
@@ -221,14 +221,14 @@ L_j=2^j,
 \qquad
 r_j=\left\lceil128\log\frac4{\beta_j}\right\rceil
 \quad(0\le j\le K).
-\tag{20}
+\qquad\text{(20)}
 ```
 
 Natural logarithms are used in this file. Assume
 
 ```math
 L_K\Delta\le\frac18.
-\tag{21}
+\qquad\text{(21)}
 ```
 
 At each stage $`j`$, perform $`r_j`$ shots for an $`X`$ measurement and another $`r_j`$ shots for a $`-Y`$ measurement, each beginning with a fresh preparation of the probe in $`|+\rangle`$. Within each shot, accumulate exactly $`L_j`$ successful rotations. Correct every failure before trying the next source. Let $`\widehat c_j`$ and $`\widehat s_j`$ be the two empirical averages of the $`\pm1`$ outcomes, and let
@@ -236,7 +236,7 @@ At each stage $`j`$, perform $`r_j`$ shots for an $`X`$ measurement and another 
 ```math
 \alpha_j=\operatorname{atan2}(\widehat s_j,\widehat c_j)
 \in(-\pi,\pi].
-\tag{22}
+\qquad\text{(22)}
 ```
 
 If both averages vanish, set $`\alpha_j=0`$; this case will lie outside the good event used below.
@@ -247,7 +247,7 @@ Initialize $`\widehat\varphi_0=\alpha_0`$. For $`j\ge1`$, choose the lift
 \widehat\varphi_j=
 \frac{\alpha_j+2\pi n_j}{L_j},
 \qquad n_j\in\mathbb Z,
-\tag{23}
+\qquad\text{(23)}
 ```
 
 nearest to $`\widehat\varphi_{j-1}`$. Resolve a tie arbitrarily. Finally, clip $`\widehat\varphi_K`$ to the known interval $`J`$.
@@ -256,14 +256,14 @@ The prescribed number of accepted rotations is deterministic:
 
 ```math
 S=2\sum_{j=0}^{K}L_jr_j.
-\tag{24}
+\qquad\text{(24)}
 ```
 
 Impose the hard attempt cap
 
 ```math
 N=\left\lceil4S+16\log\frac2\beta\right\rceil.
-\tag{25}
+\qquad\text{(25)}
 ```
 
 If the cap is exhausted before all the shots finish, declare failure. Otherwise return the clipped phase estimate.
@@ -272,7 +272,7 @@ If the cap is exhausted before all the shots finish, declare failure. Otherwise 
 
 ```math
 |\widehat\varphi-\varphi|\le\frac{\rho}{L_K}
-\tag{26}
+\qquad\text{(26)}
 ```
 
 with probability at least $`1-\beta`$. It uses at most $`N`$ actual attempts. Moreover,
@@ -281,7 +281,7 @@ with probability at least $`1-\beta`$. It uses at most $`N`$ actual attempts. Mo
 S\le4L_K\left(128\log\frac{32}{\beta}+1\right),
 \qquad
 N=O\!\left(L_K\log\frac1\beta\right).
-\tag{27}
+\qquad\text{(27)}
 ```
 
 **Proof.** First analyze a virtual protocol with enough valid sources to complete all the shots. The finite-cap implementation agrees with it whenever its first $`N`$ attempts suffice.
@@ -290,7 +290,7 @@ For any stage-$`j`$ shot, condition on its complete success/failure history and 
 
 ```math
 |\Phi-L_j\varphi|\le L_j\Delta.
-\tag{28}
+\qquad\text{(28)}
 ```
 
 The corresponding coordinate expectation is $`\cos\Phi`$ or $`\sin\Phi`$. Both functions are 1-Lipschitz, so it differs from the appropriate ideal coordinate by at most $`L_j\Delta\le1/8`$. Averaging over that shot's success history preserves this bound. It also holds when the next source was selected from prior classical outcomes.
@@ -302,14 +302,14 @@ Let $`X_\ell\in\{-1,1\}`$ denote successive outcomes for one coordinate, and let
 \left|\frac1r\sum_{\ell=1}^{r}(X_\ell-\mu_\ell)\right|>u
 \right]
 \le2e^{-ru^2/2}.
-\tag{29}
+\qquad\text{(29)}
 ```
 
 Thus, with $`u=1/8`$ and $`r=r_j`$, a coordinate's statistical error is at most $`1/8`$ except with probability $`\beta_j/2`$. Both coordinates at all stages satisfy their bounds except with probability
 
 ```math
 \sum_{j=0}^{K}\beta_j<\frac\beta2.
-\tag{30}
+\qquad\text{(30)}
 ```
 
 No identical-distribution or independence assumption on the shot phases was used. Each measurement samples its own conditional expectation, and (29) controls their centered fluctuations.
@@ -322,7 +322,7 @@ On this good event, each coordinate differs from its ideal value by at most $`1/
 -\begin{pmatrix}\cos(L_j\varphi)\\\sin(L_j\varphi)\end{pmatrix}
 \right\|_2
 \le\frac{\sqrt2}{4}<\sin\rho.
-\tag{31}
+\qquad\text{(31)}
 ```
 
 A disk of radius less than $`\sin\rho`$ around a unit vector subtends an angle less than $`\rho`$ at the origin. Hence $`\alpha_j`$ estimates $`L_j\varphi`$ modulo $`2\pi`$ to circular error at most $`\rho`$.
@@ -334,7 +334,7 @@ For the attempt budget, the success indicators have conditional probability at l
 ```math
 \Pr[\text{fewer than }S\text{ successes in }N\text{ attempts}]
 \le e^{-N/16}\le\frac\beta2.
-\tag{32}
+\qquad\text{(32)}
 ```
 
 Combining (30) and (32) proves the guarantee for the real capped protocol. This union bound does not condition the phase concentration statement on successful completion.
@@ -343,7 +343,7 @@ Finally,
 
 ```math
 r_j\le128\left(\log\frac{16}{\beta}+(K-j)\log2\right)+1.
-\tag{33}
+\qquad\text{(33)}
 ```
 
 Using
@@ -352,7 +352,7 @@ Using
 \sum_{j=0}^{K}2^j<2L_K,
 \qquad
 \sum_{j=0}^{K}2^j(K-j)\le2L_K,
-\tag{34}
+\qquad\text{(34)}
 ```
 
 in (24) gives (27). The geometric allocation of failure probabilities makes the coarse stages more accurate, where experiments are cheaper. It avoids multiplying the finest-scale cost by the number of scales. $`\square`$
@@ -367,7 +367,7 @@ K=\left\lceil
 \right\rceil,
 \qquad
 J=[f_k(2p_0),f_k(p_0)].
-\tag{35}
+\qquad\text{(35)}
 ```
 
 The constraints imply $`k^2\epsilon\le1/1024`$, so the argument of the logarithm exceeds one and $`K\ge0`$. Its finest scale obeys
@@ -377,7 +377,7 @@ The constraints imply $`k^2\epsilon\le1/1024`$, so the argument of the logarithm
 \le L_K<
 \frac{2\rho}{a k^2\epsilon}
 =\frac{\pi^2}{16k^2\epsilon}.
-\tag{36}
+\qquad\text{(36)}
 ```
 
 By (19), take $`\Delta=4k^2\delta`$. Then
@@ -386,7 +386,7 @@ By (19), take $`\Delta=4k^2\delta`$. Then
 L_K\Delta
 <\frac{\pi^2\delta}{4\epsilon}
 \le\frac{\pi^2}{128}<\frac18.
-\tag{37}
+\qquad\text{(37)}
 ```
 
 Lemma 2 applies. Because $`|f_k'|\ge a k^2`$ on the target interval, its inverse is $`1/(a k^2)`$-Lipschitz there. The clipped estimate therefore gives
@@ -396,7 +396,7 @@ Lemma 2 applies. Because $`|f_k'|\ge a k^2`$ on the target interval, its inverse
 \le\frac{|\widehat\varphi-f_k(p)|}{a k^2}
 \le\frac{\rho}{a k^2L_K}
 \le\epsilon.
-\tag{38}
+\qquad\text{(38)}
 ```
 
 An explicit inverse, with the principal branches appropriate to the first lobe, is
@@ -407,7 +407,7 @@ An explicit inverse, with the principal branches appropriate to the first lobe, 
 \frac1k\arcsin\sqrt{
 \frac{1-\tan(\widehat\varphi/2)}{2}}
 \right].
-\tag{39}
+\qquad\text{(39)}
 ```
 
 The argument is evaluated only after clipping to $`J`$, so it remains in the valid physical range.
@@ -420,7 +420,7 @@ Q_{\rm cap}=2k
 4\left(2\sum_{j=0}^{K}2^jr_j\right)
 +16\log\frac2\beta
 \right\rceil,
-\tag{40}
+\qquad\text{(40)}
 ```
 
 with $`r_j`$ from (20). The algorithm may stop earlier if it obtains all required successes. It never exceeds this cap on any measurement history.
@@ -431,7 +431,7 @@ Equations (27) and (36) give
 Q_{\rm cap}
 =O\!\left(\frac1{k\epsilon}\log\frac1\beta
 +k\log\frac1\beta\right).
-\tag{41}
+\qquad\text{(41)}
 ```
 
 The second term is absorbed by the first because $`k^2\epsilon\le1/1024`$. Finally, (6) yields (1). This proves Theorem 1, including failed attempts and all inverse calls.
@@ -449,7 +449,7 @@ The probability-scale promise is needed for the rare-event improvement in (1), n
 
 ```math
 O\!\left(\epsilon^{-1}\log\frac1\beta\right)
-\tag{42}
+\qquad\text{(42)}
 ```
 
 primitive calls, with a hard total cap and one retained probe qubit.
@@ -461,7 +461,7 @@ f_1(p)=2\arctan(1-2p),
 \qquad
 2\le|f_1'(p)|\le4
 \quad(0\le p\le1).
-\tag{43}
+\qquad\text{(43)}
 ```
 
 Use Lemma 2 with
@@ -471,7 +471,7 @@ J=[-\pi/2,\pi/2],
 \qquad
 K=\max\left\{0,
 \left\lceil\log_2\frac{\rho}{2\epsilon}\right\rceil\right\}.
-\tag{44}
+\qquad\text{(44)}
 ```
 
 If $`K\ge1`$, then $`L_K<\rho/\epsilon`$, so
@@ -481,7 +481,7 @@ The inverse
 
 ```math
 p=\frac{1-\tan(\varphi/2)}2
-\tag{45}
+\qquad\text{(45)}
 ```
 
 is $`1/2`$-Lipschitz on $`J`$. Equations (26) and (44) therefore give error at most $`\epsilon`$. Also $`L_K=O(1/\epsilon)`$, so (27) gives (42). The arguments include $`p=0`$ and $`p=1`$; clipping keeps the inverse within its physical interval. $`\square`$
@@ -491,7 +491,7 @@ $`p=(\mu-\ell)/(h-\ell)`$. The same argument gives
 
 ```math
 O\!\left(\frac{h-\ell}{\epsilon}\log\frac1\beta\right)
-\tag{46}
+\qquad\text{(46)}
 ```
 
 original sampler calls, with two calls per source, when the target mean accuracy is $`\epsilon`$ and the source means differ from the target by at most $`\epsilon/32`$. The conversion's arithmetic, synthesis and workspace costs remain separate. This is a range-based result, not a variance bound for every bounded distribution. Together with the matching worst-case lower bounds, it gives the $`\epsilon^{-2}`$ to $`\epsilon^{-1}`$ change between one allowed use and two allowed uses in the full changing-garbage model.
@@ -502,7 +502,7 @@ The sampler workspace must remain coherent through its $`2k`$-call local attempt
 
 ```math
 L_K=\Theta\!\left(\frac1{k^2\epsilon}\right)
-\tag{47}
+\qquad\text{(47)}
 ```
 
 accepted rotations, as well as any corrected failures between them. Its expected number of attempts is at most $`2L_K`$, and its expected primitive interrogation count is $`O(1/(k\epsilon))`$. The global hard cap (40) bounds every execution, including an unusually long sequence of failures.

@@ -47,7 +47,7 @@ The goal is to output $`\widehat p`$ with
 The probability is over the algorithm's measurements and random choices. A worst-case total-query budget bounds the number of physical oracle calls on every outcome path. Write $`Q_m(p_0,\epsilon,\delta)`$ for the smallest such budget that works for every valid source sequence in the following promised class:
 
 ```math
-0<p_0\le\frac1{16},\qquad
+0\lt p_0\le\frac1{16},\qquad
 p\in[p_0,2p_0],\qquad
 0<\epsilon\le\frac{p_0}{64},\qquad
 |p_i-p|\le\delta\le\frac{\epsilon}{32}.
