@@ -176,7 +176,7 @@ The next construction removes any restriction on retained quantum memory. It use
 
 ### 4.1 A finite family of legal unitary samplers
 
-Let $`Z=\operatorname{diag}(1,-1)`$. Independently for each source, draw
+Let $`Z=\mathrm{diag}(1,-1)`$. Independently for each source, draw
 
 ```math
 a,b\in\{0,1\},\qquad c\in\{0,1,2,3\}
@@ -243,7 +243,7 @@ The two phase averages exchange roles, and $`R_p^{\mathsf T}`$ has the same squa
 Equations (13)–(14) give a parameter-independent simulation of the complete averaged call: dephase the direction register; on its identity branch do nothing to the data; on either nonidentity branch dephase the data and apply $`X^B`$, where
 
 ```math
-B\sim\operatorname{Bernoulli}(p).
+B\sim\mathrm{Bernoulli}(p).
 ```
 
 Only one classical Bernoulli draw is needed. All other operations are known quantum channels. The draw may be unused on the identity branch, but it is still at most one draw per physical call. The identities hold completely, so arbitrary entanglement with the algorithm's memory does not change the simulation.
