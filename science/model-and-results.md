@@ -83,7 +83,7 @@ The adaptive replay lower-bound family uses $`O(\log(1/\epsilon))`$ local source
 |---|---|---|
 | Mean-to-phase transduction | [Phase transduction](phase-transduction.md) | A two-sided source call produces a useful probe rotation, or a perfectly correctable failure. |
 | Local amplification and inference | [Replay algorithm](replay-algorithm.md) | The probability sensitivity grows quadratically with local amplification length, giving the full upper bound with a hard total-call budget. |
-| Finite-twirl simulation | [Lower bounds](lower-bounds.md) | One use of each arbitrary source can be simulated with one classical Bernoulli draw, even with quantum memory. |
+| Finite-twirl simulation | [Lower bounds](lower-bounds.md) | Each phase-twirled source in the one-use hard family can be simulated with one classical Bernoulli draw, even with quantum memory. |
 | Rotation and fresh-count adversaries | [Lower bounds](lower-bounds.md) | The two lower-bound terms survive adaptive stopping and charge actual calls. |
 | Implementation and error accounting | [Resources and robustness](resources-and-robustness.md) | The query law's access, arithmetic, coherence and noise assumptions. |
 
