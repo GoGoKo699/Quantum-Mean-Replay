@@ -62,30 +62,30 @@ Assume that, for every valid fixed source sequence with common mean $`p\in[p_0,2
 
 Then:
 
-1. If $`m=1`$, one-qubit hard sources already imply
+**One use per source.** If $`m=1`$, one-qubit hard sources already imply
 
-   ```math
-   Q\ge\frac{p_0}{81\epsilon^2}.
-   \qquad\text{(4)}
-   ```
+```math
+Q\ge\frac{p_0}{81\epsilon^2}.
+\qquad\text{(4)}
+```
 
-2. For every $`m\ge1`$, one-qubit hard sources imply
+**Ordinary coherent-query limit.** For every $`m\ge1`$, one-qubit hard sources imply
 
-   ```math
-   Q\ge\frac{\sqrt{p_0}}{9\epsilon}.
-   \qquad\text{(5)}
-   ```
+```math
+Q\ge\frac{\sqrt{p_0}}{9\epsilon}.
+\qquad\text{(5)}
+```
 
-3. In the arbitrary-workspace source class, every $`m\ge1`$ obeys the combined bound
+**Combined local-replay limit.** In the arbitrary-workspace source class, every $`m\ge1`$ obeys the combined bound
 
-   ```math
-   Q\ge\frac1{4096}
-   \max\left\{
-      \frac{\sqrt{p_0}}{\epsilon},
-      \frac1{m\epsilon}
-   \right\}.
-   \qquad\text{(6)}
-   ```
+```math
+Q\ge\frac1{4096}
+\max\left\{
+   \frac{\sqrt{p_0}}{\epsilon},
+   \frac1{m\epsilon}
+\right\}.
+\qquad\text{(6)}
+```
 
 The constants are deliberately conservative. The proof of the second term in (6) uses a source of dimension $`2n`$, where $`n=\lfloor1/(4\epsilon)\rfloor`$. A qubit implementation embeds this space in fewer than $`4n`$ dimensions. The same hard family embeds in larger workspaces by extending the oracle with an identity action on the unused subspace.
 
@@ -336,8 +336,8 @@ These are expected numbers of actual physical calls within this window under the
 
 ```math
 \Delta_i
-=\operatorname{Re}\langle\psi_0|\psi_1\rangle
- -\operatorname{Re}
+=\mathrm{Re}\langle\psi_0|\psi_1\rangle
+ -\mathrm{Re}
    \langle\psi_{0,\mathrm{out}}|\psi_{i,\mathrm{out}}\rangle.
 \qquad\text{(20)}
 ```
@@ -571,7 +571,7 @@ Because source order is classical and a source cannot be revisited, all branches
 Write $`C_{0,t}`$ and $`C_{1,t}`$ for the expected numbers of actual calls in window $`t`$ under the two constructed fixed sequences. Summing Lemma 2 over the windows gives
 
 ```math
-\operatorname{Re}\langle\Psi_0|\Psi_1\rangle
+\mathrm{Re}\langle\Psi_0|\Psi_1\rangle
 \ge1-\frac{4m}{h}\sum_t(C_{0,t}+C_{1,t}).
 \qquad\text{(35)}
 ```
@@ -579,7 +579,7 @@ Write $`C_{0,t}`$ and $`C_{1,t}`$ for the expected numbers of actual calls in wi
 The auxiliary baseline costs $`\overline C`$ have disappeared. Each sum of actual expected costs is bounded by the pathwise cap $`Q`$, so
 
 ```math
-\operatorname{Re}\langle\Psi_0|\Psi_1\rangle
+\mathrm{Re}\langle\Psi_0|\Psi_1\rangle
 \ge1-\frac{8mQ}{h}.
 \qquad\text{(36)}
 ```

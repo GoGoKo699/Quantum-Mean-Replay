@@ -234,7 +234,7 @@ L_K\Delta\le\frac18.
 At each stage $`j`$, perform $`r_j`$ shots for an $`X`$ measurement and another $`r_j`$ shots for a $`-Y`$ measurement, each beginning with a fresh preparation of the probe in $`|+\rangle`$. Within each shot, accumulate exactly $`L_j`$ successful rotations. Correct every failure before trying the next source. Let $`\widehat c_j`$ and $`\widehat s_j`$ be the two empirical averages of the $`\pm1`$ outcomes, and let
 
 ```math
-\alpha_j=\operatorname{atan2}(\widehat s_j,\widehat c_j)
+\alpha_j=\mathrm{atan2}(\widehat s_j,\widehat c_j)
 \in(-\pi,\pi].
 \qquad\text{(22)}
 ```
