@@ -16,7 +16,7 @@ The reflection-based instrument in [phase-transduction.md](../science/phase-tran
 
 ## Amplitude amplification and estimation
 
-[Brassard, Høyer, Mosca and Tapp (2002)](https://doi.org/10.1090/conm/305/05215) supply the amplitude-amplification identity and the usual amplitude-estimation benchmark. For success probability $p$, their Theorem 12 has an error contribution of order $\sqrt{p(1-p)}/M+1/M^2$ after order $M$ uses of a fixed preparation and its inverse.
+[Brassard, Høyer, Mosca and Tapp (2002)](https://doi.org/10.1090/conm/305/05215) supply the amplitude-amplification identity and the usual amplitude-estimation benchmark. For success probability $`p`$, their Theorem 12 has an error contribution of order $`\sqrt{p(1-p)}/M+1/M^2`$ after order $`M`$ uses of a fixed preparation and its inverse.
 
 The present algorithm amplifies **within** one source window and then transfers a scalar phase to the common probe. It does not alternate Grover steps built from incompatible source-dependent planes. Its inferred replay threshold follows from combining local sensitivity with the matching lower bound, rather than directly applying fixed-source amplitude estimation.
 

@@ -6,28 +6,28 @@ This repository develops a matching query law for sequential samplers whose outp
 
 ## Principal result
 
-Let $m$ be the maximum number of calls to one source. For a known probability scale $p_0$, an unknown mean $p\in[p_0,2p_0]$, and additive accuracy $\epsilon$, the optimal worst-case total number of queries at constant confidence is
+Let $`m`$ be the maximum number of calls to one source. For a known probability scale $`p_0`$, an unknown mean $`p\in[p_0,2p_0]`$, and additive accuracy $`\epsilon`$, the optimal worst-case total number of queries at constant confidence is
 
-$$
+```math
 Q_1=\Theta\!\left(\frac{p_0}{\epsilon^2}\right),
-$$
+```
 
 and
 
-$$
+```math
 Q_m=\Theta\!\left(
 \max\!\left\{\frac{\sqrt{p_0}}{\epsilon},\frac1{m\epsilon}\right\}
 \right),\qquad m\ge2.
-$$
+```
 
-The theorem assumes $0<p_0\le1/16$, $0<\epsilon\le p_0/64$, exact inverse access within each window, and source means satisfying $|p_i-p|\le\epsilon/32$. A controlled physical invocation costs one query. Sources cannot be revisited or coherently selected across identities. The lower bound allows unrestricted persistent quantum memory and takes a worst case over local workspace dimensions. See the [complete model and theorem](science/model-and-results.md).
+The theorem assumes $`0<p_0\le1/16`$, $`0<\epsilon\le p_0/64`$, exact inverse access within each window, and source means satisfying $`|p_i-p|\le\epsilon/32`$. A controlled physical invocation costs one query. Sources cannot be revisited or coherently selected across identities. The lower bound allows unrestricted persistent quantum memory and takes a worst case over local workspace dimensions. See the [complete model and theorem](science/model-and-results.md).
 
 | Resource regime | Consequence |
 |---|---|
 | One use per source | The worst-case query cost is classical. |
-| Two uses per source | A preparation/inverse pair suffices for order $1/\epsilon$ bounded-mean estimation. |
-| More local replay | Local amplification improves rare-event sensitivity, with cost of order $1/(m\epsilon)$ before saturation. |
-| Replay of order $p_0^{-1/2}$ | The usual rare-event amplitude-estimation order $\sqrt{p_0}/\epsilon$ is reached. |
+| Two uses per source | A preparation/inverse pair suffices for order $`1/\epsilon`$ bounded-mean estimation. |
+| More local replay | Local amplification improves rare-event sensitivity, with cost of order $`1/(m\epsilon)`$ before saturation. |
+| Replay of order $`p_0^{-1/2}`$ | The usual rare-event amplitude-estimation order $`\sqrt{p_0}/\epsilon`$ is reached. |
 
 The mechanism uses an established gearbox/repeat-until-success circuit. On success it adds a useful probe phase; on failure a known Pauli correction restores the probe. Each attempt can therefore use a different source. The new resource statement combines this composition with local amplitude amplification, robust multiscale inference and matching adaptive-query lower bounds. [Attribution and closest comparison](references/related-work.md).
 
