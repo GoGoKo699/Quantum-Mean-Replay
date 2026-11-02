@@ -75,7 +75,7 @@ Q_m(p_0,\epsilon,\delta)
 
 The upper bound can achieve success probability at least $`1-\beta`$, for $`0<\beta\le1/2`$, by multiplying the displayed query bound by $`O(\log(1/\beta))`$. It uses one persistent probe qubit in addition to the current source's workspace and classical memory. The lower bound permits arbitrary persistent quantum memory.
 
-The adaptive replay lower-bound family uses $`O(\log(1/\epsilon))`$ local source qubits. Thus the theorem is minimax over the stated arbitrary-workspace class. It does not assert the same complete frontier for every fixed one-qubit source model. The one-use endpoint and the ordinary amplitude-estimation lower bound do already have one-qubit hard instances.
+The matching lower orders already have one-qubit source instances, while allowing arbitrary persistent memory. The original adaptive Boolean-string replay adversary uses $`O(\log(1/\epsilon))`$ local source qubits; the [continuous fresh-phase converse](anytime-confidence.md#4-grouping-by-charged-calls) strengthens this to a single source qubit. Thus the full frontier also holds when the allowed source workspace is restricted to one qubit, provided the output phases and unitary completions may still change arbitrarily. A common known clean preparation plane is a stronger promise and is not covered by that hard family.
 
 ### Proof dependencies
 
@@ -85,6 +85,7 @@ The adaptive replay lower-bound family uses $`O(\log(1/\epsilon))`$ local source
 | Local amplification and inference | [Replay algorithm](replay-algorithm.md) | The probability sensitivity grows quadratically with local amplification length, giving the full upper bound with a hard total-call budget. |
 | Finite-twirl simulation | [Lower bounds](lower-bounds.md) | Each phase-twirled source in the one-use hard family can be simulated with one classical Bernoulli draw, even with quantum memory. |
 | Rotation and fresh-count adversaries | [Lower bounds](lower-bounds.md) | The two lower-bound terms survive adaptive stopping and charge actual calls. |
+| Fresh-phase channels and committed confidence | [All-time confidence](anytime-confidence.md) | A qubit-source replay converse and a direct replay-sensitive multiscale summability law. |
 | Implementation and error accounting | [Resources and robustness](resources-and-robustness.md) | The query law's access, arithmetic, coherence and noise assumptions. |
 
 For $`m=1`$, measuring the flag of each fresh source gives Bernoulli observations with means within $`\delta`$ of $`p`$ and variances at most $`3p_0`$. A Bernstein bound gives the claimed upper bound, since the bias is at most $`\delta`$. The finite-twirl lower bound gives the matching order. For $`m\ge2`$, the two upper-bound components and the two matching lower bounds in the linked proofs complete the theorem.
@@ -115,8 +116,34 @@ Local amplitude amplification increases the derivative of the probability-to-pha
 
 The persistent probe is essential to the stated construction. A small quantum-memory size does not imply short coherence time: the finest Ramsey experiments retain a phase across many fresh sources. The result isolates **local source reuse** as a resource while allowing long-lived coherence in the probe. It does not give a copies-only protocol or a noise-resilient constant-depth estimator.
 
-## 5. Boundaries of the result
+## 5. All-time committed confidence at zero drift
+
+The [sister result with Anytime Quantum Estimation](anytime-confidence.md) asks for one event of probability at least $`1-\alpha`$ covering every committed estimate at every actual-call budget. It retains the same access rules and charges every failed transfer attempt, but assumes exact common means $`p_i=p`$.
+
+Set $`A_m(p_0)=\max\{\sqrt{p_0},1/m\}`$. For a sufficiently small universal $`c>0`$, geometric accuracies $`\epsilon_k=cp_0 3^{-k}`$ reached at deterministic deadlines $`T_k`$ obey
+
+```math
+\sum_{k\ge1}
+\exp\!\left[-D\frac{T_k\epsilon_k}{A_m(p_0)}\right]
+\le B\alpha,
+\qquad 0<\alpha\le\frac14,
+```
+
+with universal $`B,D`$. A horizon-free upper schedule achieves
+
+```math
+T_k=O\!\left(
+\frac{A_m(p_0)}{\epsilon_k}
+\left[\log(k+2)+\log\frac1\alpha\right]
+\right).
+```
+
+Both branches of the replay frontier therefore pay the all-time confidence overhead in the precise normalized-deadline sense. For $`m=2`$, this remains of order $`[\log\log T+\log(1/\alpha)]/T`$ even at $`p_0\ll1/m^2`$. The new step is a fresh-phase polynomial-channel and charged-call block argument; the conclusion is not obtained by multiplying the terminal replay bound and a phase-estimation bound.
+
+For $`K`$ refinements, the lower bound constrains the maximum or average of $`T_k\epsilon_k/A_m(p_0)`$. It does not force a final $`\log K`$ penalty if the last precision was specified in advance. This zero-drift theorem does not turn the terminal promise $`\delta\le\epsilon/32`$ into a fixed-positive-drift all-time guarantee.
+
+## 6. Boundaries of the result
 
 The known scale, sequential access, uniform drift promise and exact within-window inverse are load-bearing assumptions. Arbitrary forward/inverse mismatch is not covered by the drift parameter. Error in a paired, consistently compiled sampler is different from an independently faulty inverse. Neither unrestricted source drift nor adaptation to an unknown rare-event scale is established here.
 
-The phase transducer and amplitude-amplification identity are inherited ingredients. The contribution is their fresh-source composition and matching resource law, with an adaptive lower bound in actual paid queries. The [related-work account](../references/related-work.md) identifies the precise comparison and what is not claimed. Numerical checks in [verification](../verification/README.md) stress the identities and algorithm; the analytical proofs establish the asymptotic guarantees.
+The phase transducer and amplitude-amplification identity are inherited ingredients. The terminal contribution is their fresh-source composition and matching resource law, with adaptive lower bounds in actual paid queries. The all-time extension adds a replay-sensitive probability-propagation law to the inherited Cantor first-error method. The [related-work account](../references/related-work.md) identifies the precise comparisons and what is not claimed. Numerical checks in [verification](../verification/README.md) stress the identities and algorithm; the analytical proofs establish the asymptotic guarantees.

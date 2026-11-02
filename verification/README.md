@@ -89,6 +89,47 @@ The repeated $`k=7`$ reflects the conservative first-lobe cap, rather than spend
 
 The global $`k=1`$ corollary receives a separate targeted check for negative phases, $`p=0`$, $`p=1`$, and the $`K=0`$ branch at large tolerance. All 448 trials across seven cases returned an estimate within $`\epsilon`$, with no attempt-cap failures and maximum error below $`0.240\epsilon`$. Its source means are clipped to $`[0,1]`$, as required at the endpoints. The cases and coverage are recorded separately in the JSON report so these checks are not confused with the known-scale rare-event theorem.
 
+## Fresh-phase polynomial and charged-block checks
+
+The joint all-time investigation has a separate finite algebra check:
+
+```bash
+python verification/check_twirl_degree.py --check verification/twirl-degree-results.json
+```
+
+The script averages the 16 finite row, column and global phase choices of the
+one-qubit hard source. It includes a coherent selector among idle, forward and
+inverse operations and arbitrary seeded known interleavings. For one source
+receiving 1 through 6 calls, fresh-point interpolation checks the predicted
+polynomial degree at most the number of actual calls. An explicit outcome-adaptive
+macroblock has one or two calls in its first window; a fresh second window is
+used only when needed to reach the two-call threshold. Its maximum is three
+calls and its event likelihood is checked against a cubic. The complete
+unnormalized output retains trace one.
+
+The largest observed interpolation residual is $`3.06\times10^{-16}`$.
+Omitting the source-phase twirl is a negative control: its quadratic-fit residual
+is about $`0.127`$, exposing the square-root dependence that the twirl removes.
+[twirl-degree-results.json](twirl-degree-results.json) records the cases,
+environment, script identity and residuals. The check has the same NumPy
+dependency as the original validation. Regenerate it with `--write` instead of
+`--check`.
+
+The companion repository owns the [charged all-time schedule check](https://github.com/GoGoKo699/Anytime-Quantum-Estimation/blob/main/verification/check_anytime_replay.py)
+and its [recorded ledgers](https://github.com/GoGoKo699/Anytime-Quantum-Estimation/blob/main/verification/replay-schedule-results.json).
+Those deterministic calculations include $`m=2`$ at $`p_0=2^{-40}`$, larger
+replay budgets, saturation, all failed attempts, and the known-final-level
+boundary. With amplification length $`\ell`$ and an attempt cap $`N_j`$,
+the charged stage cap is $`2\ell N_j`$, including an all-failure path.
+Successful rotations alone are not the query ledger. A backward-geometric
+confidence allocation keeps the final known-target cost proportional to
+$`\epsilon^{-1}\log(1/\alpha)/\ell`$; the finite-scale lower theorem is
+not a lower bound on the last deadline alone.
+
 ## Verification limits
 
 The checks cover matrix algebra, preservation of probe/reference correlations, the full one-use twirled channel, amplification boundaries, an explicit inverse-error counterexample, and the charged multiscale implementation under selected allowed drift sequences. They do not numerically test a large-query adversary lower bound or infer asymptotic optimality from a fit. The lower bound is an analytic claim requiring its separate proof review.
+
+## Hosted mathematical display
+
+The read-only [hosted-math workflow](../.github/workflows/hosted-math.yml) compares actual commit-pinned GitHub MathML with the source at desktop and narrow widths for this repository and its pinned sister account. The generic collector in `verification/hosted/` inventories all Markdown pages, compares mathematical structure and saves HTML/screenshots for visual inspection. This checks display and source identity; it does not certify the scientific proofs.

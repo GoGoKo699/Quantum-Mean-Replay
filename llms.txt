@@ -16,6 +16,9 @@ Canonical scientific entrypoints:
   multiscale Ramsey schedule, drift handling, hard query cap and global corollary.
 - science/lower-bounds.md: finite phase twirl, coherent rotation lower bound,
   actual-call adaptive-window lemma and fixed hard-sequence construction.
+- science/anytime-confidence.md: canonical shared zero-drift all-time theorem,
+  finite-phase polynomial CPTP macroblocks, actual-call derivative bound,
+  Cantor first-error summability and matching charged construction.
 - science/resources-and-robustness.md: physical call, source, memory, gate,
   arithmetic and coherence accounting, and the matched-inverse error boundary.
 - references/related-work.md: closest results, inherited ingredients and the
@@ -64,8 +67,14 @@ Essential scientific distinctions:
 - The total budget is a deterministic worst-case physical-query cap. Expected
   active costs inside the converse are proof devices, not a separate theorem
   for algorithms constrained only in expected queries.
-- The full frontier is minimax over the allowed local-workspace class. The
-  replay-dependent hard family uses O(log(1/epsilon)) local source qubits.
+- The new finite-phase converse already uses one source qubit. The older
+  Boolean-source adversary remains an alternative proof with a larger workspace.
+- At zero drift, both terms A=max(sqrt(p0),1/m) pay the simultaneous-confidence
+  overhead: sum exp(-D T_k epsilon_k/A)<=B alpha. This is a multiscale/limsup
+  law, not a pointwise penalty or a log K lower bound on the last known deadline.
+- Sister GoGoKo699/Anytime-Quantum-Estimation owns the all-time interpretation;
+  this repository owns the canonical joint sampler proof. Both use Nielsen
+  and Chuang, 10th Anniversary Edition (2010), with distinct learning bridges.
 - The one-use classical simulation concerns the phase-twirled hard-family
   average. It does not simulate every arbitrary source or establish the same
   lower bound under a common known clean-output-column promise.
