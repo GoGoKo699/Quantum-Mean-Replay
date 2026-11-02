@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: GoGoKo699/Anytime-Quantum-Estimation
-          ref: aa67f4809a19eba29aa3dbcc805f22dc25fdd74b
+          ref: 4301198d91310e7e607db255e1cf35c2965d08c6
           fetch-depth: 1
           persist-credentials: false
           path: anytime
@@ -34,10 +34,12 @@ jobs:
       - name: Compare actual GitHub mathematics with both pinned sources
         env:
           NODE_PATH: ${{ runner.temp }}/hosted-deps/node_modules
-          AQE_REVISION: aa67f4809a19eba29aa3dbcc805f22dc25fdd74b
+          AQE_REVISION: 4301198d91310e7e607db255e1cf35c2965d08c6
         run: |
-          node replay/verification/hosted/capture_hosted_math.cjs --root replay --repository GoGoKo699/Quantum-Mean-Replay --revision "$GITHUB_SHA" --output hosted-evidence/Quantum-Mean-Replay
-          node replay/verification/hosted/capture_hosted_math.cjs --root anytime --repository GoGoKo699/Anytime-Quantum-Estimation --revision "$AQE_REVISION" --output hosted-evidence/Anytime-Quantum-Estimation
+          status=0
+          node replay/verification/hosted/capture_hosted_math.cjs --root replay --repository GoGoKo699/Quantum-Mean-Replay --revision "$GITHUB_SHA" --output hosted-evidence/Quantum-Mean-Replay --contract replay/verification/hosted/replay-contract.json || status=1
+          node replay/verification/hosted/capture_hosted_math.cjs --root anytime --repository GoGoKo699/Anytime-Quantum-Estimation --revision "$AQE_REVISION" --output hosted-evidence/Anytime-Quantum-Estimation --contract replay/verification/hosted/anytime-contract.json || status=1
+          exit "$status"
       - name: Retain rendered evidence
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02

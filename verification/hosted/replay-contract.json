@@ -1,0 +1,263 @@
+{
+  "schema_version": 1,
+  "expressions": [
+    {
+      "path": "README.md",
+      "index": 5,
+      "source_sha256": "5b369db38ae01f771d86ff8fc8e2aa3a3bc2cb2904e9c02499141e353de2e1a3",
+      "expected_text": "\n  \n    Q\n    1\n  \n  =\n  \u0398\n  \n    \n  \n  \n    (\n    \n      \n        p\n        0\n      \n      \n        \u03f5\n        2\n      \n    \n    )\n  \n  ,\n"
+    },
+    {
+      "path": "README.md",
+      "index": 6,
+      "source_sha256": "c2d61b51a9772ea7744bfbde66b5ee654654db2419252fca18e9efdaec950ea8",
+      "expected_text": "\n  \n    Q\n    m\n  \n  =\n  \u0398\n  \n    \n  \n  \n    (\n    max\n    \n      \n    \n    \n      {\n      \n        \n          \n            p\n            0\n          \n        \n        \u03f5\n      \n      ,\n      \n        1\n        \n          m\n          \u03f5\n        \n      \n      }\n    \n    )\n  \n  ,\n  \n    \n  \n  m\n  \u2265\n  2.\n"
+    },
+    {
+      "path": "README.md",
+      "index": 15,
+      "source_sha256": "055fa25ba7431707901c8865752e2a6e54b6845c4ffc458007b225308d18a2bf",
+      "expected_text": "\n  \n    A\n    m\n  \n  (\n  \n    p\n    0\n  \n  )\n  =\n  max\n  {\n  \n    \n      p\n      0\n    \n  \n  ,\n  1\n  \n    /\n  \n  m\n  }\n  .\n"
+    },
+    {
+      "path": "README.md",
+      "index": 19,
+      "source_sha256": "85e21681f2e93191e10db97aa6e4ebe2838b443bdeedeeab3552cc719ab2f4a6",
+      "expected_text": "\n  \n    \u2211\n    k\n  \n  exp\n  \u2061\n  [\n  \u2212\n  D\n  \n    T\n    k\n  \n  \n    \u03f5\n    k\n  \n  \n    /\n  \n  \n    A\n    m\n  \n  (\n  \n    p\n    0\n  \n  )\n  ]\n  \u2264\n  B\n  \u03b1\n  .\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 4,
+      "source_sha256": "ca2464693efa45943c15eff49d3d8a26fb5cf593e104dad88e17c83d2d6f7268",
+      "expected_text": "\n  \u27e8\n  0\n  |\n  \n    U\n    i\n    \u2020\n  \n  \u03a0\n  \n    U\n    i\n  \n  |\n  0\n  \u27e9\n  =\n  p\n  ,\n  \n    \n  \n  0\n  <\n  \n    p\n    0\n  \n  \u2264\n  \n    1\n    16\n  \n  ,\n  \n    \n  \n  p\n  \u2208\n  [\n  \n    p\n    0\n  \n  ,\n  2\n  \n    p\n    0\n  \n  ]\n  ,\n  \n    \n  \n  m\n  \u2265\n  2.\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 10,
+      "source_sha256": "b333989823d75cfbc076d808c973ef07da01821a74b4d78eb69c36e69f532c22",
+      "expected_text": "\n  Pr\n  \n    \n  \n  \n    {\n    |\n    \n      \n        \n          p\n          ^\n        \n      \n      T\n    \n    \u2212\n    p\n    |\n    \u2264\n    r\n    (\n    T\n    )\n    \u00a0for every\u00a0\n    T\n    }\n  \n  \u2265\n  1\n  \u2212\n  \u03b1\n  ,\n  \n    \n  \n  0\n  <\n  \u03b1\n  \u2264\n  \n    1\n    4\n  \n  .\n  \n    \n  \n  (1)\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 11,
+      "source_sha256": "f65d201b90cecce0250e2e3bd366a40892592453ce96c5a5fbb82dabed795b20",
+      "expected_text": "\n  \n    A\n    m\n  \n  (\n  \n    p\n    0\n  \n  )\n  =\n  max\n  {\n  \n    \n      p\n      0\n    \n  \n  ,\n  1\n  \n    /\n  \n  m\n  }\n  .\n  \n    \n  \n  (2)\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 13,
+      "source_sha256": "e5984ef12b464ad422107f2993319695fefa50735626ef50e757684dd83156c5",
+      "expected_text": "\n  \n    \u03f5\n    k\n  \n  =\n  \n    c\n    0\n  \n  \n    p\n    0\n  \n  \n    \n  \n  \n    3\n    \n      \u2212\n      k\n    \n  \n  ,\n  \n    \n  \n  k\n  \u2265\n  1\n  ,\n  \n    \n  \n  (3)\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 17,
+      "source_sha256": "b74b842f9311406ef4f88a658fb321348425ecfcf8f4ff511625cc2d9feff527",
+      "expected_text": "\n  \n    \n      \n        \n          \n            \n              \u2211\n              \n                k\n                \u2265\n                1\n              \n            \n            exp\n            \n              \n            \n            \n              [\n              \u2212\n              D\n              \n                \n                  \n                    T\n                    k\n                  \n                  \n                    \u03f5\n                    k\n                  \n                \n                \n                  \n                    A\n                    m\n                  \n                  (\n                  \n                    p\n                    0\n                  \n                  )\n                \n              \n              ]\n            \n            \u2264\n            B\n            \u03b1\n            .\n          \n        \n      \n    \n  \n  \n    \n  \n  (4)\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 18,
+      "source_sha256": "e63b41c2d64d8f5153b6839a7bc40cd60abba3d63c34a1036d56234f6b61195b",
+      "expected_text": "\n  \n    T\n    k\n  \n  \u2264\n  C\n  \n    \n      \n        A\n        m\n      \n      (\n      \n        p\n        0\n      \n      )\n    \n    \n      \u03f5\n      k\n    \n  \n  \n    [\n    log\n    \u2061\n    (\n    k\n    +\n    2\n    )\n    +\n    log\n    \u2061\n    \n      1\n      \u03b1\n    \n    ]\n  \n  .\n  \n    \n  \n  (5)\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 20,
+      "source_sha256": "047ca385d2dee54e2b2f32b895a0f5ca58409790e8842371bd3bc82605dfd609",
+      "expected_text": "\n  r\n  (\n  T\n  )\n  =\n  O\n  \n    \n  \n  \n    (\n    \n      \n        \n          A\n          m\n        \n        (\n        \n          p\n          0\n        \n        )\n      \n      T\n    \n    \n      [\n      log\n      \u2061\n      log\n      \u2061\n      T\n      +\n      log\n      \u2061\n      \n        1\n        \u03b1\n      \n      ]\n    \n    )\n  \n  \n    \n  \n  (6)\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 21,
+      "source_sha256": "2a3222fa9b5dc64e05b6e8631027420aeac9e3d97990568a566c21498e821647",
+      "expected_text": "\n  \n    \n      T\n      r\n      (\n      T\n      )\n    \n    \n      \n        A\n        m\n      \n      (\n      \n        p\n        0\n      \n      )\n      log\n      \u2061\n      log\n      \u2061\n      T\n    \n  \n  .\n  \n    \n  \n  (7)\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 23,
+      "source_sha256": "0d33fa984c62dbc4f9ba5d47d85b71786b7009e284d201631c142190f45b9448",
+      "expected_text": "\n  \n    max\n    \n      1\n      \u2264\n      k\n      \u2264\n      K\n    \n  \n  \n    \n      \n        T\n        k\n      \n      \n        \u03f5\n        k\n      \n    \n    \n      \n        A\n        m\n      \n      (\n      \n        p\n        0\n      \n      )\n    \n  \n  \u2265\n  \n    1\n    D\n  \n  log\n  \u2061\n  \n    K\n    \n      B\n      \u03b1\n    \n  \n  ,\n  \n    \n  \n  (8)\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 33,
+      "source_sha256": "d76c1050dba7c6a44598fe72a1e4b413828999de0d0466eba73d794755396191",
+      "expected_text": "\n  a\n  ,\n  b\n  \u2208\n  {\n  0\n  ,\n  1\n  }\n  ,\n  \n    \n  \n  c\n  \u2208\n  {\n  0\n  ,\n  1\n  ,\n  2\n  ,\n  3\n  }\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 34,
+      "source_sha256": "4a409c11e985ccb3dba65e275b9c4a9c74c72678addf6cf2585e9fadfd2ba8ea",
+      "expected_text": "\n  \n    U\n    \n      a\n      ,\n      b\n      ,\n      c\n      ;\n      p\n    \n  \n  =\n  \n    i\n    c\n  \n  \n    Z\n    a\n  \n  \n    R\n    p\n  \n  \n    Z\n    b\n  \n  ,\n  \n    \n  \n  \n    R\n    p\n  \n  =\n  \n    (\n    \n      \n        \n          \n            1\n            \u2212\n            p\n          \n        \n        \n          \u2212\n          \n            p\n          \n        \n      \n      \n        \n          \n            p\n          \n        \n        \n          \n            1\n            \u2212\n            p\n          \n        \n      \n    \n    )\n  \n  .\n  \n    \n  \n  (9)\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 48,
+      "source_sha256": "1cc78ccb5258a28818311052fc498bbc3cfa54020d4da9284a7ecf7b520f6856",
+      "expected_text": "\n  R\n  (\n  x\n  ,\n  \u2212\n  y\n  )\n  =\n  Z\n  R\n  (\n  x\n  ,\n  y\n  )\n  Z\n  ,\n  \n    \n  \n  R\n  (\n  \u2212\n  x\n  ,\n  y\n  )\n  =\n  \u2212\n  Z\n  R\n  (\n  x\n  ,\n  y\n  )\n  Z\n  .\n  \n    \n  \n  (10)\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 61,
+      "source_sha256": "6537c53f189d074099e5f757ccdef8c5d2b35a016387e9ac71916b8ac7e26699",
+      "expected_text": "\n  0\n  \u2264\n  \n    f\n    Q\n  \n  (\n  p\n  )\n  \u2264\n  1\n  \n    \n  \n  (\n  p\n  \u2208\n  [\n  0\n  ,\n  1\n  ]\n  )\n  ,\n  \n    \n  \n  \n    sup\n    \n      p\n      \u2208\n      [\n      0\n      ,\n      1\n      ]\n    \n  \n  |\n  \n    f\n    Q\n    \n      (\n      j\n      )\n    \n  \n  (\n  p\n  )\n  |\n  \u2264\n  [\n  \n    C\n    1\n  \n  Q\n  min\n  (\n  m\n  ,\n  Q\n  )\n  \n    ]\n    j\n  \n  \n    \n  \n  (\n  j\n  \u2265\n  1\n  )\n  .\n  \n    \n  \n  (11)\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 68,
+      "source_sha256": "1e968ffe0f7ec6c3c2e2b54182ffdcf5bc022c4bf07fbe99dd7a44dd2116a9d3",
+      "expected_text": "\n  N\n  =\n  \u230a\n  Q\n  \n    /\n  \n  h\n  \u230b\n  +\n  1\n  \n    \n  \n  (12)\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 73,
+      "source_sha256": "a8e8db947222365e0b28d540a1cfdb031eb716e55b9414653794b151425315de",
+      "expected_text": "\n  \n    sup\n    \n      p\n      \u2208\n      [\n      0\n      ,\n      1\n      ]\n    \n  \n  \u2225\n  \n    \u03a6\n    t\n    \n      (\n      j\n      )\n    \n  \n  (\n  p\n  )\n  \n    \u2225\n    \u22c4\n  \n  \u2264\n  (\n  2\n  \n    d\n    t\n    2\n  \n  \n    )\n    j\n  \n  \u2264\n  (\n  8\n  \n    h\n    2\n  \n  \n    )\n    j\n  \n  .\n  \n    \n  \n  (13)\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 76,
+      "source_sha256": "0decbd413e566cf6f9a802bde4f82c0df0abaaed16acb75a6bd0f1b59a1b754c",
+      "expected_text": "\n  \n    \n      \u2016\n      \n        \n          d\n          j\n        \n        \n          d\n          \n            p\n            j\n          \n        \n      \n      (\n      \n        \u03a6\n        N\n      \n      \u22ef\n      \n        \u03a6\n        1\n      \n      )\n      (\n      p\n      )\n      \u2016\n    \n    \u22c4\n  \n  \u2264\n  (\n  8\n  N\n  \n    h\n    2\n  \n  \n    )\n    j\n  \n  \u2264\n  (\n  16\n  Q\n  h\n  \n    )\n    j\n  \n  .\n  \n    \n  \n  (14)\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 85,
+      "source_sha256": "c241ef2811054e3b4ba12da1b5c0848e075bb6d508c8898446d594e25eb39177",
+      "expected_text": "\n  |\n  P\n  (\n  z\n  )\n  |\n  \u2264\n  \n    A\n    d\n  \n  \u222b\n  |\n  P\n  |\n  \n    \n  \n  d\n  \u03bc\n  ,\n  \n    \n  \n  \u2212\n  2\n  \u2264\n  z\n  \u2264\n  1.\n  \n    \n  \n  (15)\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 96,
+      "source_sha256": "ef3d5b27c93de704628420d0b7d5b8c4846da6203c2d38403f510a1fd5a46180",
+      "expected_text": "\n  \u222b\n  f\n  \n    \n  \n  d\n  \u03bd\n  \u2265\n  c\n  exp\n  \u2061\n  [\n  \u2212\n  C\n  (\n  M\n  \u2113\n  +\n  1\n  )\n  ]\n  .\n  \n    \n  \n  (16)\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 99,
+      "source_sha256": "eaecf0065f0a1f79ca87c371f9b35b40fd5723ba3405ab19316e08e6619f12cd",
+      "expected_text": "\n  R\n  \u2264\n  \n    \n      (\n      2\n      M\n      \u2113\n      \n        )\n        \n          d\n          +\n          1\n        \n      \n    \n    \n      (\n      d\n      +\n      1\n      )\n      !\n    \n  \n  \u2264\n  \n    \n      (\n      \n        \n          2\n          e\n          M\n          \u2113\n        \n        \n          d\n          +\n          1\n        \n      \n      )\n    \n    \n      d\n      +\n      1\n    \n  \n  .\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 104,
+      "source_sha256": "d79868e32edf7939dd421776fdc3570334c7e59e400bedd4740d27803c8a0c88",
+      "expected_text": "\n  \n    1\n    2\n  \n  \u2264\n  \n    A\n    d\n  \n  \n    (\n    \u222b\n    f\n    \n      \n    \n    d\n    \u03bd\n    +\n    R\n    )\n  \n  +\n  R\n  ,\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 118,
+      "source_sha256": "984145f81492af6dd3a672ef89ce51aa591b5ca3061caeaaf8fe0f615e3a7023",
+      "expected_text": "\n  \n    E\n    \n      s\n      ,\n      k\n    \n  \n  =\n  {\n  \n    W\n    1\n  \n  \u22ef\n  \n    W\n    \n      k\n      \u2212\n      1\n    \n  \n  =\n  s\n  ,\n  \u00a0\n  \n    W\n    k\n  \n  =\n  0\n  }\n  \n    \n  \n  (17)\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 123,
+      "source_sha256": "6c6af0fb0c8b190c26e290440d2465f50de8064b41615739a3cdfeef1685fc9a",
+      "expected_text": "\n  c\n  exp\n  \u2061\n  [\n  \u2212\n  C\n  (\n  \n    T\n    k\n  \n  min\n  (\n  m\n  ,\n  \n    T\n    k\n  \n  )\n  \n    \u2113\n    k\n  \n  +\n  1\n  )\n  ]\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 129,
+      "source_sha256": "b46e28b20a280a70b233840c9048dc2925c53ec3fe41f414cf55f20910b66ce8",
+      "expected_text": "\n  \n    \u2211\n    k\n  \n  exp\n  \u2061\n  [\n  \u2212\n  D\n  \n    T\n    k\n  \n  min\n  (\n  m\n  ,\n  \n    T\n    k\n  \n  )\n  \n    \u03f5\n    k\n  \n  ]\n  \u2264\n  B\n  \u03b1\n  .\n  \n    \n  \n  (18)\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 131,
+      "source_sha256": "115dda8b494aa0d3509ed1809847a4a0ed1391cf3bc8d9c287e123c2da486172",
+      "expected_text": "\n  \n    \u2211\n    k\n  \n  exp\n  \u2061\n  [\n  \u2212\n  D\n  m\n  \n    T\n    k\n  \n  \n    \u03f5\n    k\n  \n  ]\n  \u2264\n  B\n  \u03b1\n  .\n  \n    \n  \n  (19)\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 134,
+      "source_sha256": "f41282121bd97a376bfc35706e60553e0a92ffc95b2182ab1a47f33d6ca53fe6",
+      "expected_text": "\n  \u03b8\n  \u2208\n  [\n  arcsin\n  \u2061\n  \n    \n      p\n      0\n    \n  \n  ,\n  arcsin\n  \u2061\n  \n    2\n    \n      p\n      0\n    \n  \n  ]\n  ,\n  \n    \n  \n  \n    \n      d\n      p\n    \n    \n      d\n      \u03b8\n    \n  \n  =\n  \u0398\n  (\n  \n    \n      p\n      0\n    \n  \n  )\n  .\n  \n    \n  \n  (20)\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 144,
+      "source_sha256": "67a455e38a9647b642bed2e676e2dba76426ade1cae7bc64ef33553420e352b8",
+      "expected_text": "\n  \n    \u2211\n    k\n  \n  exp\n  \n    \n  \n  \n    [\n    \u2212\n    D\n    \n      \n        \n          T\n          k\n        \n        \n          \u03f5\n          k\n        \n      \n      \n        \n          p\n          0\n        \n      \n    \n    ]\n  \n  \u2264\n  B\n  \u03b1\n  .\n  \n    \n  \n  (21)\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 148,
+      "source_sha256": "53b58c410b3fd3449e4574aace2f0f5172aab6052ff681752b2aa6c84a00b2dc",
+      "expected_text": "\n  \u2113\n  \u2264\n  min\n  {\n  m\n  \n    /\n  \n  2\n  ,\n  1\n  \n    /\n  \n  (\n  4\n  \n    \n      p\n      0\n    \n  \n  )\n  }\n  .\n  \n    \n  \n  (22)\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 152,
+      "source_sha256": "1dc672d3d9ed7c64a3f87711120a73e0f28998c66c2993c499f7f1bad16a1689",
+      "expected_text": "\n  \n    q\n    \u2113\n  \n  (\n  p\n  )\n  =\n  \n    sin\n    2\n  \n  \u2061\n  (\n  \u2113\n  arcsin\n  \u2061\n  \n    p\n  \n  )\n  ,\n  \n    \n  \n  \n    f\n    \u2113\n  \n  (\n  p\n  )\n  =\n  2\n  arctan\n  \u2061\n  (\n  1\n  \u2212\n  2\n  \n    q\n    \u2113\n  \n  (\n  p\n  )\n  )\n  ,\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 153,
+      "source_sha256": "ea6fd0a4b8c27e86a0cda9754cfea46a1af738b1a0fe8c0044626b19bc16f4bc",
+      "expected_text": "\n  \n    4\n    \u03c0\n  \n  \n    \u2113\n    2\n  \n  \u2264\n  |\n  \n    f\n    \u2113\n    \u2032\n  \n  (\n  p\n  )\n  |\n  \u2264\n  4\n  \n    \u2113\n    2\n  \n  .\n  \n    \n  \n  (23)\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 158,
+      "source_sha256": "f4b97d1b46ee3d2a06ed17690f0d7b1d3946b09f345ee4d80d925154b3c0bde1",
+      "expected_text": "\n  |\n  \n    f\n    1\n    \u2032\n  \n  (\n  p\n  )\n  |\n  =\n  \n    4\n    \n      1\n      +\n      (\n      1\n      \u2212\n      2\n      p\n      \n        )\n        2\n      \n    \n  \n  \u2208\n  [\n  2\n  ,\n  4\n  ]\n  .\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 162,
+      "source_sha256": "fef2daf1212e5c86bb86cc99abd8dd9d21d4b0730ac0447a8cf4b9e850cbba54",
+      "expected_text": "\n  S\n  \u2264\n  \n    C\n    \n      \n        \u2113\n        2\n      \n      \u03f5\n    \n  \n  log\n  \u2061\n  \n    1\n    \u03b2\n  \n  .\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 163,
+      "source_sha256": "1f29f8448fddae47c037fb87d0fdf85de699870cb9b9f339d1565dbc558f2644",
+      "expected_text": "\n  N\n  =\n  \n    \u2308\n    4\n    S\n    +\n    16\n    log\n    \u2061\n    \n      2\n      \u03b2\n    \n    \u2309\n  \n  .\n  \n    \n  \n  (24)\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 168,
+      "source_sha256": "27db8632f8b00905bd0a7b4469a147c34ef166d879d3bdfc0545c8608c843857",
+      "expected_text": "\n  Pr\n  {\n  fewer than\u00a0\n  S\n  \u00a0successes by\u00a0\n  N\n  }\n  \u2264\n  \n    e\n    \n      \u2212\n      N\n      \n        /\n      \n      16\n    \n  \n  \u2264\n  \u03b2\n  \n    /\n  \n  2.\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 171,
+      "source_sha256": "002c2297c58d2110bd6b6b065b14c5a44043edc4df16c8b46d04135d62bab2ac",
+      "expected_text": "\n  2\n  \u2113\n  N\n  \u2264\n  C\n  \n    \n      \n        A\n        m\n      \n      (\n      \n        p\n        0\n      \n      )\n    \n    \u03f5\n  \n  log\n  \u2061\n  \n    1\n    \u03b2\n  \n  .\n  \n    \n  \n  (25)\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 174,
+      "source_sha256": "ab0ee5b02c4546e2c515b069e29455c42df4abc4f289a159879322309a17b206",
+      "expected_text": "\n  \n    \u03b2\n    k\n  \n  =\n  \n    \u03b1\n    \n      k\n      (\n      k\n      +\n      1\n      )\n    \n  \n  ,\n  \n    \n  \n  k\n  \u2265\n  1.\n  \n    \n  \n  (26)\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 176,
+      "source_sha256": "f58164bb9e4bc2567aa14de47ca41f98df7802f0261b3122d5f234db1eac196c",
+      "expected_text": "\n  \n    \u2211\n    \n      j\n      =\n      1\n    \n    k\n  \n  C\n  \n    \n      \n        A\n        m\n      \n      (\n      \n        p\n        0\n      \n      )\n    \n    \n      \u03f5\n      j\n    \n  \n  log\n  \u2061\n  \n    1\n    \n      \u03b2\n      j\n    \n  \n  \u2264\n  \n    C\n    \u2032\n  \n  \n    \n      \n        A\n        m\n      \n      (\n      \n        p\n        0\n      \n      )\n    \n    \n      \u03f5\n      k\n    \n  \n  \n    [\n    log\n    \u2061\n    (\n    k\n    +\n    2\n    )\n    +\n    log\n    \u2061\n    \n      1\n      \u03b1\n    \n    ]\n  \n  ,\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 179,
+      "source_sha256": "589a1a10db2abc7decd0e221aedab17fa534ddafbdd48009d8112ba6a8ad6d19",
+      "expected_text": "\n  r\n  (\n  T\n  )\n  \u2264\n  C\n  \n    \n      \n        A\n        m\n      \n      (\n      \n        p\n        0\n      \n      )\n    \n    T\n  \n  \n    [\n    log\n    \u2061\n    \n      1\n      \u03b1\n    \n    +\n    log\n    \u2061\n    log\n    \n      \n    \n    \n      (\n      \n        e\n        2\n      \n      +\n      \n        \n          T\n          \n            p\n            0\n          \n        \n        \n          \n            A\n            m\n          \n          (\n          \n            p\n            0\n          \n          )\n        \n      \n      )\n    \n    ]\n  \n  \n    \n  \n  (27)\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 187,
+      "source_sha256": "a802ec05f86c168a65f7342e85aae7f684f0ca7d9fa7a84903359c06900de115",
+      "expected_text": "\n  \n    \u03b2\n    k\n  \n  =\n  \u03b1\n  \n    \n  \n  \n    2\n    \n      k\n      \u2212\n      K\n      \u2212\n      1\n    \n  \n  ,\n  \n    \n  \n  1\n  \u2264\n  k\n  \u2264\n  K\n  .\n"
+    },
+    {
+      "path": "science/anytime-confidence.md",
+      "index": 190,
+      "source_sha256": "2da7380469ca5d0153844fffae19f8fdedc9d7e40f85e770e72ef0cfc6b09399",
+      "expected_text": "\n  \n    T\n    K\n  \n  =\n  O\n  \n    \n  \n  \n    (\n    \n      \n        \n          A\n          m\n        \n        (\n        \n          p\n          0\n        \n        )\n      \n      \n        \u03f5\n        K\n      \n    \n    log\n    \u2061\n    \n      1\n      \u03b1\n    \n    )\n  \n  .\n  \n    \n  \n  (28)\n"
+    }
+  ]
+}
