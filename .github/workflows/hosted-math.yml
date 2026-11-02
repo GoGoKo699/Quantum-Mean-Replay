@@ -1,0 +1,48 @@
+name: Hosted mathematics
+on:
+  push:
+    branches: [sister/replay-anytime-confidence]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  github-rendering:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out collector and replay source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+          path: replay
+      - name: Check out pinned confidence source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          repository: GoGoKo699/Anytime-Quantum-Estimation
+          ref: aa67f4809a19eba29aa3dbcc805f22dc25fdd74b
+          fetch-depth: 1
+          persist-credentials: false
+          path: anytime
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+      - name: Install anonymous renderer dependencies
+        run: |
+          npm install --prefix "$RUNNER_TEMP/hosted-deps" --no-audit --no-fund playwright@1.56.1 mathjax-full@3.2.1
+          "$RUNNER_TEMP/hosted-deps/node_modules/.bin/playwright" install --with-deps chromium
+      - name: Compare actual GitHub mathematics with both pinned sources
+        env:
+          NODE_PATH: ${{ runner.temp }}/hosted-deps/node_modules
+          AQE_REVISION: aa67f4809a19eba29aa3dbcc805f22dc25fdd74b
+        run: |
+          node replay/verification/hosted/capture_hosted_math.cjs --root replay --repository GoGoKo699/Quantum-Mean-Replay --revision "$GITHUB_SHA" --output hosted-evidence/Quantum-Mean-Replay
+          node replay/verification/hosted/capture_hosted_math.cjs --root anytime --repository GoGoKo699/Anytime-Quantum-Estimation --revision "$AQE_REVISION" --output hosted-evidence/Anytime-Quantum-Estimation
+      - name: Retain rendered evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: hosted-mathematics
+          path: hosted-evidence
+          if-no-files-found: error
+          retention-days: 14

@@ -4,7 +4,7 @@
 
 This repository develops a matching query law for sequential samplers whose output states and unitary completions may change arbitrarily. Each source is available for one window, with a cap on its total forward and inverse calls. A correctable phase-transduction circuit transfers the source's mean information to one persistent probe qubit.
 
-**Sister project: [Anytime Quantum Estimation](https://github.com/GoGoKo699/Anytime-Quantum-Estimation).** The two projects jointly determine what local replay costs when an entire history of committed estimates must remain reliable. This repository owns the [shared sampler theorem and full proof](science/anytime-confidence.md); its sister develops the [all-time confidence interpretation](https://github.com/GoGoKo699/Anytime-Quantum-Estimation/blob/main/science/expiring-samplers.md).
+**Sister project: [Anytime Quantum Estimation](https://github.com/GoGoKo699/Anytime-Quantum-Estimation).** The two projects jointly determine what local replay costs when an entire history of committed estimates must remain reliable. This repository owns the [shared sampler theorem and full proof](science/anytime-confidence.md); its sister develops the [all-time confidence interpretation](https://github.com/GoGoKo699/Anytime-Quantum-Estimation/blob/aa67f4809a19eba29aa3dbcc805f22dc25fdd74b/science/expiring-samplers.md).
 
 ## Principal result
 

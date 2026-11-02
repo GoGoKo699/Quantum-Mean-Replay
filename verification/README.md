@@ -129,3 +129,7 @@ not a lower bound on the last deadline alone.
 ## Verification limits
 
 The checks cover matrix algebra, preservation of probe/reference correlations, the full one-use twirled channel, amplification boundaries, an explicit inverse-error counterexample, and the charged multiscale implementation under selected allowed drift sequences. They do not numerically test a large-query adversary lower bound or infer asymptotic optimality from a fit. The lower bound is an analytic claim requiring its separate proof review.
+
+## Hosted mathematical display
+
+The read-only [hosted-math workflow](../.github/workflows/hosted-math.yml) compares actual commit-pinned GitHub MathML with the source at desktop and narrow widths for this repository and its pinned sister account. The generic collector in `verification/hosted/` inventories all Markdown pages, compares mathematical structure and saves HTML/screenshots for visual inspection. This checks display and source identity; it does not certify the scientific proofs.
