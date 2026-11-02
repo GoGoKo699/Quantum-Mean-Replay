@@ -13,7 +13,7 @@ Here the means have **zero drift**:
 ```math
 \langle0|U_i^\dagger\Pi U_i|0\rangle=p,
 \qquad
-0<p_0\le\frac1{16},
+0\lt p_0\le\frac1{16},
 \qquad p\in[p_0,2p_0],
 \qquad m\ge2.
 ```
@@ -27,7 +27,7 @@ At each actual-call budget $`T`$, the algorithm has a committed classical estima
  |\widehat p_T-p|\le r(T)\text{ for every }T
 \right\}\ge1-\alpha,
 \qquad 0<\alpha\le\frac14.
-\tag{1}
+\qquad\text{(1)}
 ```
 
 Finite prefixes are finite protocols. The all-time statement means that every finite prefix obeys the same simultaneous guarantee, with a consistent horizon-free execution. A terminal output decoded only after choosing a horizon, or marginal correctness separately at each time, is a different guarantee. Expected stopping-cost deadlines are not asserted here.
@@ -38,14 +38,14 @@ Write
 
 ```math
 A_m(p_0)=\max\{\sqrt{p_0},1/m\}.
-\tag{2}
+\qquad\text{(2)}
 ```
 
 **Theorem 1 — replay-sensitive all-time confidence.** There are universal positive constants $`c_0,B,D,C`$ with the following properties. Set
 
 ```math
 \epsilon_k=c_0p_0\,3^{-k},\qquad k\ge1,
-\tag{3}
+\qquad\text{(3)}
 ```
 
 where $`c_0`$ is sufficiently small. If increasing deterministic charged-call deadlines $`T_k`$ reach radii $`r(T_k)<\epsilon_k`$ under (1), then
@@ -55,7 +55,7 @@ where $`c_0`$ is sufficiently small. If increasing deterministic charged-call de
 \sum_{k\ge1}
  \exp\!\left[-D\frac{T_k\epsilon_k}{A_m(p_0)}\right]
 \le B\alpha.}
-\tag{4}
+\qquad\text{(4)}
 ```
 
 The same assertion holds for any finite initial set of required refinements. Conversely, a horizon-free protocol satisfies (1) and reaches these accuracies at deterministic deadlines bounded by
@@ -64,7 +64,7 @@ The same assertion holds for any finite initial set of required refinements. Con
 T_k\le
 C\frac{A_m(p_0)}{\epsilon_k}
 \left[\log(k+2)+\log\frac1\alpha\right].
-\tag{5}
+\qquad\text{(5)}
 ```
 
 Its upper construction uses one persistent probe, in addition to the current sampler workspace and classical records. The lower theorem allows unrestricted persistent memory and already has one-qubit source instances.
@@ -76,14 +76,14 @@ r(T)=O\!\left(
 \frac{A_m(p_0)}{T}
 \left[\log\log T+\log\frac1\alpha\right]
 \right)
-\tag{6}
+\qquad\text{(6)}
 ```
 
 after initialization, with a matching positive lower limit superior for
 
 ```math
 \frac{T r(T)}{A_m(p_0)\log\log T}.
-\tag{7}
+\qquad\text{(7)}
 ```
 
 The summability statement is primary. It does not impose the displayed lower order at every time or every individual refinement. In particular, for $`K`$ prescribed refinements it gives
@@ -92,7 +92,7 @@ The summability statement is primary. It does not impose the displayed lower ord
 \max_{1\le k\le K}
 \frac{T_k\epsilon_k}{A_m(p_0)}
 \ge\frac1D\log\frac{K}{B\alpha},
-\tag{8}
+\qquad\text{(8)}
 ```
 
 and Jensen's inequality gives the same lower bound for the average of these normalized deadlines. It is not a lower bound on the last deadline alone.
@@ -119,7 +119,7 @@ R_p=
 \sqrt{1-p}&-\sqrt p\\
 \sqrt p&\sqrt{1-p}
 \end{pmatrix}.
-\tag{9}
+\qquad\text{(9)}
 ```
 
 The tuple is drawn once per source and remains fixed throughout its window, including inverse calls. Every realization is a legal exact-mean-$`p`$ sequence. The label list can be fixed before the run. The protocol must satisfy (1) for every such list, so it also satisfies (1) after averaging the independent labels. The **same** label prior and continuous parameter $`p`$ are used at all deadlines.
@@ -136,7 +136,7 @@ For each source separately, the phase ensemble is invariant under each sign chan
 R(x,-y)=ZR(x,y)Z,
 \qquad
 R(-x,y)=-ZR(x,y)Z.
-\tag{10}
+\qquad\text{(10)}
 ```
 
 The first toggles $`a,b`$; the second also shifts $`c`$ by two. This relabelling represents the same transformed unitary and its inverse, so it also works for the coherent current-source direction selector. Averaging removes every monomial with an odd power of either $`x_i`$ or $`y_i`$. Substituting $`x_i^2=1-p`$ and $`y_i^2=p`$ gives degree at most $`L`$ in the common parameter.
@@ -153,7 +153,7 @@ Adaptive instruments give sums or integrals of these unnormalized maps. Finite-q
 \sup_{p\in[0,1]}|f_Q^{(j)}(p)|
 \le[C_1 Q\min(m,Q)]^j
 \quad(j\ge1).
-\tag{11}
+\qquad\text{(11)}
 ```
 
 **Proof.** Enforce the local and global call caps using known counters on all inputs, returning a fixed recorded output if a cap would be exceeded. This changes no promised run and makes the auxiliary maps physical for all $`p\in[0,1]`$.
@@ -162,7 +162,7 @@ Put $`h=\min(m,Q)`$. Starting at a source boundary, collect complete active sour
 
 ```math
 N=\lfloor Q/h\rfloor+1
-\tag{12}
+\qquad\text{(12)}
 ```
 
 blocks. Pad halted histories by identity maps. Keep the full classical histories, counters, source pointer, committed outputs and persistent quantum memory at their interfaces.
@@ -175,7 +175,7 @@ By Lemma 2 each block $`\Phi_t(p)`$ is a CPTP polynomial of degree $`d_t\le2h`$.
 \sup_{p\in[0,1]}
 \|\Phi_t^{(j)}(p)\|_\diamond
 \le(2d_t^2)^j\le(8h^2)^j.
-\tag{13}
+\qquad\text{(13)}
 ```
 
 Indeed, the usual first-derivative inequality is $`\|P'\|_\infty\le2d^2\|P\|_\infty`$ on $`[0,1]`$. Repeating it gives (13); duality transfers the scalar inequality to these map norms. Derivatives above the degree vanish. This estimate is uniform over memory dimension and includes entangled references.
@@ -188,7 +188,7 @@ Leibniz's rule, the multinomial theorem and diamond-norm submultiplicativity now
 \right\|_\diamond
 \le(8Nh^2)^j
 \le(16Qh)^j.
-\tag{14}
+\qquad\text{(14)}
 ```
 
 The last inequality uses $`h\le Q`$. Applying a transcript-event effect to the final state proves (11). A zero-call likelihood is constant and can be handled separately. $`\square`$
@@ -202,7 +202,7 @@ We use the following inherited Cantor norming fact. Let $`\mu`$ be the fair midd
 ```math
 |P(z)|\le A^d\int |P|\,d\mu,
 \qquad -2\le z\le1.
-\tag{15}
+\qquad\text{(15)}
 ```
 
 The [baseline norming proof](https://github.com/GoGoKo699/Anytime-Quantum-Estimation/blob/bd1e4d175f8c1c1ffa23c89493ccc0e6d9d86fcd/science/cantor-propagation.md) selects alternating equal-mass Cantor quantile bins and applies Lagrange interpolation. Its Frostman estimate $`\mu(J)\le4|J|^{\log2/\log3}`$ bounds every denominator exponentially in $`d`$. No new general Remez theorem is claimed here.
@@ -214,7 +214,7 @@ Suppose $`0\le f\le1`$ on $`[0,1]`$ and $`\|f^{(j)}\|_\infty\le M^j`$ for every 
 ```math
 \int f\,d\nu\ge
 c\exp[-C(M\ell+1)].
-\tag{16}
+\qquad\text{(16)}
 ```
 
 To see this, Taylor-expand about $`b`$ to degree $`d`$. On the displayed interval its remainder obeys
@@ -241,7 +241,7 @@ At $`T_k`$, project the reported estimate to the nearest level-$`k`$ cylinder an
 
 ```math
 E_{s,k}=\{W_1\cdots W_{k-1}=s,\ W_k=0\}
-\tag{17}
+\qquad\text{(17)}
 ```
 
 is an ordinary event in the physical transcript through $`T_k`$. Its averaged likelihood is at least $`1-\alpha\ge1/2`$ everywhere in the left child $`s0`$. A point in that child lies within two child widths of the adjacent right child $`s1`$. Equation (16) therefore gives an average likelihood at least
@@ -256,14 +256,14 @@ on $`s1`$. Under a true parameter in $`s1`$, event (17) is a first decoded error
 \sum_k
 \exp[-D T_k\min(m,T_k)\epsilon_k]
 \le B\alpha.
-\tag{18}
+\qquad\text{(18)}
 ```
 
 Both the source-label prior and Cantor prior describe one experiment across all deadlines. No independence between errors at different scales is used, and no event is conditioned on earlier correct outputs. Since $`\min(m,T_k)\le m`$, (18) also implies
 
 ```math
 \sum_k\exp[-D mT_k\epsilon_k]\le B\alpha.
-\tag{19}
+\qquad\text{(19)}
 ```
 
 ## 6. The ordinary rare-event branch
@@ -274,7 +274,7 @@ Independently take every source to be the same clean rotation $`R_p`$ in (9), no
 \theta\in[\arcsin\sqrt{p_0},\arcsin\sqrt{2p_0}],
 \qquad
 \frac{dp}{d\theta}=\Theta(\sqrt{p_0}).
-\tag{20}
+\qquad\text{(20)}
 ```
 
 Each physical call, including its inverse and direction control, has matrix entries of trigonometric degree at most one in $`\theta`$. Every $`T`$-call transcript-event likelihood therefore has degree at most $`2T`$ and is bounded between zero and one on the full circle. The [phase-polynomial and first-error proof](https://github.com/GoGoKo699/Anytime-Quantum-Estimation/blob/bd1e4d175f8c1c1ffa23c89493ccc0e6d9d86fcd/science/first-error-summability.md) applies.
@@ -285,7 +285,7 @@ For precision, clip an estimate to $`[p_0,2p_0]`$ before applying $`\arcsin\sqrt
 \sum_k
 \exp\!\left[-D\frac{T_k\epsilon_k}{\sqrt{p_0}}\right]
 \le B\alpha.
-\tag{21}
+\qquad\text{(21)}
 ```
 
 When $`m\le p_0^{-1/2}`$, use (19); otherwise use (21). Increasing universal constants if necessary gives (4). These are two independently proved multiscale obstructions. The first attaches the confidence overhead to local replay; the second controls saturation at the ordinary amplitude-estimation rate.
@@ -298,7 +298,7 @@ Choose the largest positive odd integer
 
 ```math
 \ell\le\min\{m/2,1/(4\sqrt{p_0})\}.
-\tag{22}
+\qquad\text{(22)}
 ```
 
 It exists and obeys $`\ell=\Theta(\min\{m,p_0^{-1/2}\})`$, so $`1/\ell=\Theta(A_m(p_0))`$. One locally amplified preparation and its exact inverse cost $`2\ell\le m`$ source calls per attempt. The [exact transducer](phase-transduction.md) has
@@ -313,7 +313,7 @@ and on the known-scale interval
 
 ```math
 \frac4\pi\ell^2\le|f_\ell'(p)|\le4\ell^2.
-\tag{23}
+\qquad\text{(23)}
 ```
 
 Its success probability $`(1-q_\ell)^2+q_\ell^2\ge1/2`$ is independent of the probe and any entangled reference. A success adds $`e^{if_\ell(p)Z/2}`$; a corrected failure restores the incoming probe exactly. At zero drift, accepted rotations from different sources have precisely the same phase. No coherent control of an accepted RUS gate is assumed.
@@ -336,7 +336,7 @@ It uses geometrically growing Ramsey lengths and backward-geometric allocation o
 
 ```math
 N=\left\lceil4S+16\log\frac2\beta\right\rceil.
-\tag{24}
+\qquad\text{(24)}
 ```
 
 Every attempt, including a failure, uses one new source and costs $`2\ell`$ calls. The total pathwise budget is therefore $`2\ell N`$, rather than $`2\ell S`$. Conditional success probabilities are at least $`1/2`$, so a Chernoff bound gives
@@ -351,7 +351,7 @@ The remaining $`\beta/2`$ covers the Ramsey measurements. Exhausting the cap com
 ```math
 2\ell N\le
 C\frac{A_m(p_0)}{\epsilon}\log\frac1\beta.
-\tag{25}
+\qquad\text{(25)}
 ```
 
 ### A horizon-free sequence
@@ -360,7 +360,7 @@ At refinement $`k`$, run this terminal procedure to accuracy, for example, $`\ep
 
 ```math
 \beta_k=\frac{\alpha}{k(k+1)},\qquad k\ge1.
-\tag{26}
+\qquad\text{(26)}
 ```
 
 All internal outputs can remain private; commit the final clipped result of each outer run. The source supply continues chronologically, with every attempt using a new source. The same guarantee applies conditional on past classical records, and $`\sum_k\beta_k=\alpha`$. A union bound therefore proves (1). Geometric accuracies and the increasing logarithmic budget give
@@ -384,7 +384,7 @@ C\frac{A_m(p_0)}{T}
 \log\frac1\alpha+
 \log\log\!\left(e^2+\frac{Tp_0}{A_m(p_0)}\right)
 \right]
-\tag{27}
+\qquad\text{(27)}
 ```
 
 after $`T\ge C[A_m(p_0)/p_0]\log(1/\alpha)`$; the prior radius covers earlier times. For fixed $`p_0,m`$ this is (6). The matching positive limit superior follows from (4) exactly as in the phase case: deadlines proportional to $`[A_m(p_0)/p_0]3^k\log k`$ would make the summands dominate a divergent power series if that limit superior were too small.
@@ -403,7 +403,7 @@ Their sum is below $`\alpha`$. Since $`\epsilon_k^{-1}=3^{k-K}\epsilon_K^{-1}`$,
 T_K=O\!\left(
 \frac{A_m(p_0)}{\epsilon_K}\log\frac1\alpha
 \right).
-\tag{28}
+\qquad\text{(28)}
 ```
 
 All committed outputs remain simultaneously correct. Some earlier normalized deadlines are inefficient, so this does not violate (8). A mandatory final $`\log K`$ factor would be a false conclusion.
