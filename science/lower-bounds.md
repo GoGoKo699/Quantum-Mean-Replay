@@ -13,7 +13,7 @@ Q_m=\Omega\!\left(
 \right)\quad(m\ge2).
 ```
 
-Here $`m`$ is the maximum **total** number of calls to one source, counting forward, inverse, and controlled calls together. The first bound uses one-qubit sources. The replay-dependent lower bound uses sources with $`O(\log(1/\epsilon))`$ local qubits. Consequently, the combined law is a minimax statement over the allowed arbitrary-workspace source class; it is not a fixed-local-dimension optimality theorem for every $`m`$.
+Here $`m`$ is the maximum **total** number of calls to one source, counting forward, inverse, and controlled calls together. Sections 5–6 retain the original replay-dependent proof using $`O(\log(1/\epsilon))`$ local source qubits. The new [continuous fresh-phase proof](anytime-confidence.md) gives the same asymptotic replay converse with one-qubit sources and also proves its all-time confidence strengthening. Thus the combined lower orders already hold in the arbitrary-phase one-qubit source class. Neither argument applies to a promised common known clean preparation plane.
 
 ## 1. Operational model and theorem
 
@@ -87,7 +87,7 @@ Q\ge\frac1{4096}
 \qquad\text{(6)}
 ```
 
-The constants are deliberately conservative. The proof of the second term in (6) uses a source of dimension $`2n`$, where $`n=\lfloor1/(4\epsilon)\rfloor`$. A qubit implementation embeds this space in fewer than $`4n`$ dimensions. The same hard family embeds in larger workspaces by extending the oracle with an identity action on the unused subspace.
+The constants are deliberately conservative. The proof below of the second term in (6) uses a source of dimension $`2n`$, where $`n=\lfloor1/(4\epsilon)\rfloor`$. A qubit implementation embeds this space in fewer than $`4n`$ dimensions. The same hard family embeds in larger workspaces by extending the oracle with an identity action on the unused subspace. Section 8 states the separate one-qubit strengthening, with its full proof in the shared all-time account.
 
 We use normalized trace distance
 
@@ -621,3 +621,30 @@ The one-use phase-twirl argument is a separate worst-case construction for the f
 The sequential, nonreturning access rule is essential to the window induction. The proof does not cover later revisits to old sources, a free coherent SELECT over source identities, quantum-controlled source reordering, or indefinite causal order. Conversely, it imposes no restriction on the quantum memory retained between legal windows and does not assume that the algorithm measures or resets that memory after a source expires.
 
 The hard families require exact unitary access and exact inverses, as does the stated oracle model. They make no claim about a device supplied only through classical samples or a noisy irreversible channel. Known gates, local workspace, and sustained probe coherence are separate resources from the query lower bounds proved here.
+
+## 8. A one-qubit replay converse and all-time strengthening
+
+The [canonical shared proof](anytime-confidence.md#3-a-common-continuous-hard-family) uses the same finite phase family (12), now allowing repeated calls within each source. After averaging the independent source labels, a complete unnormalized block with at most $`L`$ calls is a CPTP polynomial in $`p`$ of degree at most $`L`$. Independent sign symmetry in $`\sqrt p`$ and $`\sqrt{1-p}`$ removes odd powers. This conclusion retains arbitrary memory, controlled directions, adaptive instruments and all classical histories.
+
+Grouping complete source windows by their **actual** accumulated call count, then applying the Markov polynomial inequality to the resulting channel maps, gives every $`Q`$-call transcript-event likelihood $`f_Q`$ the bound
+
+```math
+\sup_{p\in[0,1]}|f_Q^{(j)}(p)|
+\le[C Q\min(m,Q)]^j.
+```
+
+Two means separated by $`4\epsilon`$ require an event probability gap of at least $`1/3`$ under the constant-confidence estimation guarantee. The mean value theorem with $`j=1`$ therefore implies
+
+```math
+Q=\Omega\!\left(\frac1{m\epsilon}\right)
+```
+
+with one-qubit source workspaces. The ordinary rotation lower bound also uses one qubit. The terminal frontier consequently has matching lower orders within that source class, with unknown changing phases and completions; the higher-dimensional adversary above remains valid.
+
+The derivative estimate has a further consequence unavailable from an additive overlap bound alone. A common continuous parameter family and Cantor first-error propagation give, for geometric accuracies at deterministic committed-output deadlines,
+
+```math
+\sum_k\exp[-D mT_k\epsilon_k]\le B\alpha.
+```
+
+The independent rotation family supplies the $`\sqrt{p_0}`$-normalized all-time law. Selecting the stronger directly proved multiscale obstruction gives the full $`A_m(p_0)=\max\{\sqrt{p_0},1/m\}`$ confidence frontier. The [theorem and its precise scope](anytime-confidence.md#2-joint-theorem-and-its-meaning) distinguish summability and maximum normalized deadlines from a false lower bound on a known final deadline alone.

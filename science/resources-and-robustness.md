@@ -55,13 +55,37 @@ For example, if $`C_U`$ bounds the implementation cost of a primitive source cal
 
 If these costs vary with $`i`$, the corresponding costs must be summed over actual attempts. The theorem's query count does not replace that sum by its smallest constituent cost.
 
-At constant confidence, the explicit schedule requires
+At constant confidence, the explicit terminal schedule requires
 
 ```math
 S=O((k^2\epsilon)^{-1})
 ```
 
 accepted transfers and caps attempted transfers at $`O(S)`$. Thus the primitive-call count is $`O((k\epsilon)^{-1})`$. A logarithmic factor in inverse failure probability is present when confidence is not fixed. The longest Ramsey batch contains $`\Theta((k^2\epsilon)^{-1})`$ accepted transfers; the proof also caps the total number of attempts. These are substantial coherence requirements. The conclusion concerns how long each transient sampler must remain usable, while the probe carries phase across many such samplers.
+
+## Committed all-time confidence
+
+The [joint all-time theorem](anytime-confidence.md) retains the same primitive-call ledger and assumes zero drift. For one terminal subroutine with failure budget $`\beta`$ and a prescribed accepted-transfer count $`S`$, use the hard cap
+
+```math
+N=\left\lceil4S+16\log\frac2\beta\right\rceil.
+```
+
+Its actual source-call cap is $`2kN`$, including all unsuccessful attempts. Cap exhaustion is a recorded failure with a committed fallback estimate, rather than a discarded execution. The success lower bound $`1/2`$ and conditional Chernoff estimate put that event inside the stated failure budget.
+
+For horizon-free geometric refinements $`\epsilon_j=cp_0 3^{-j}`$, allocate $`\beta_j=\alpha/[j(j+1)]`$. Sum the hard subroutine budgets to obtain deterministic cumulative deadlines
+
+```math
+T_j=O\!\left(
+\frac{A_m(p_0)}{\epsilon_j}
+\left[\log(j+2)+\log\frac1\alpha\right]
+\right),
+\qquad A_m(p_0)=\max\{\sqrt{p_0},1/m\}.
+```
+
+One simultaneous success event covers every committed answer, including those held between completed refinements. The prior midpoint and radius $`p_0/2`$ cover initialization. The upper bound still retains one probe through each Ramsey shot and its intervening failed attempts; the all-time guarantee does not shorten that coherence requirement.
+
+For $`m=2`$, every attempted transfer costs two calls and the confidence envelope has order $`[\log\log T+\log(1/\alpha)]/T`$ at fixed known scale, even if $`p_0\ll1/4`$. This is a statement about simultaneous efficiency across shrinking resolutions. If the final target is supplied in advance, allocating confidence backward from it avoids a compulsory final $`\log K`$ factor while making some earlier normalized deadlines inefficient. No expected-attempt budget or conditional-on-success complexity replaces the pathwise call caps.
 
 ## Bounded values do not provide a free input oracle
 
@@ -75,7 +99,7 @@ A finite-precision value register encoding $`x\in[0,1]`$ can be converted cohere
 
 Applying this to a source distribution gives marked probability $`\mathbb E[x]`$. The effective sampler includes the value-to-coin circuit; its inverse includes the exact reverse circuit. The original source is still queried once per effective sampler call, while reversible arithmetic, angle synthesis, ancillas, and their inverses must be charged as additional gates.
 
-The theorem does not supply QRAM, a loaded amplitude vector, a coherent lookup into an arbitrary classical data set, or an efficient dilation of an arbitrary observable. An application with such input requirements must provide and charge them. The lower bound uses a known unitary $`W_n`$ preparing the exact uniform state over $`n`$ index labels. This unitary depends only on the known integer $`n`$, carries no hidden input information, and does not assume that $`n`$ is a power of two. Its known-gate implementation cost is separate from the primitive-query lower bound; no QRAM is assumed.
+The theorem does not supply QRAM, a loaded amplitude vector, a coherent lookup into an arbitrary classical data set, or an efficient dilation of an arbitrary observable. An application with such input requirements must provide and charge them. The original Boolean-string lower-bound proof uses a known unitary $`W_n`$ preparing the exact uniform state over $`n`$ index labels. This unitary depends only on the known integer $`n`$, carries no hidden input information, and does not assume that $`n`$ is a power of two. Its known-gate implementation cost is separate from the primitive-query lower bound; no QRAM is assumed. The strengthened [fresh-phase converse](anytime-confidence.md) instead uses one-qubit sources and no index-loading operation.
 
 If the implemented coin circuit consistently uses rounded values $`\widetilde x`$, with $`|\widetilde x-x|\le\nu`$, the induced mean changes by at most $`\nu`$. This can be included in the mean-drift budget **provided that the inverse is the exact inverse of the actual implemented circuit**. Unmatched forward and inverse synthesis errors are a different error model.
 
@@ -107,7 +131,7 @@ can depend on the source mean. Consequently, accepting successful attempts gener
 
 The source sequence may be fixed in advance or chosen using earlier classical records, as long as every current source satisfies the same pointwise mean promise and remains a unitary with the required inverse throughout its window. Conditional bounded-variable concentration then applies to the Ramsey outcomes, and a conditional success lower bound controls the attempt cap. These arguments do not include an uncontrolled quantum environment shared with the probe or an oracle that changes during its own amplification/inversion sequence.
 
-The robustness theorem uses the explicit drift ratio $`\delta\le\epsilon/32`$.
+The terminal robustness theorem uses the explicit drift ratio $`\delta\le\epsilon/32`$ for its specified target accuracy. The all-time shrinking theorem assumes $`\delta=0`$. A fixed positive unrestricted drift tolerance cannot satisfy that ratio as $`\epsilon\to0`$, so the terminal drift guarantee does not imply the all-time theorem with fixed drift.
 
 The global $`k=1`$ corollary in [replay-algorithm.md](replay-algorithm.md) separately covers $`p\in[0,1]`$, including the endpoints, with the same small drift ratio. It uses no supplied rare-event scale and asserts the uniform $`O(\epsilon^{-1})`$ precision law, rather than the sharper scale-dependent rare-event rate.
 

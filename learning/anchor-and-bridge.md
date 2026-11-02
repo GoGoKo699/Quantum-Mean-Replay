@@ -1,4 +1,4 @@
-# From Nielsen and Chuang to local replay
+# From Nielsen and Chuang to replay and committed confidence
 
 The educational anchor is Michael A. Nielsen and Isaac L. Chuang, *Quantum Computation and Quantum Information*, **10th Anniversary Edition (2010)**, Cambridge University Press, ISBN 9781107002173. The [publisher's book page](https://www.cambridge.org/highereducation/books/quantum-computation-and-quantum-information/01E10196D0A682A6AEFFEA52D53BE9AE) identifies the edition; its [official contents PDF](https://assets.cambridge.org/97811070/02173/toc/9781107002173_toc.pdf) verifies the section numbers and printed starting pages used below. These are contents-level checks, not a claim that every textbook argument has been independently audited.
 
@@ -18,7 +18,7 @@ The table selects the foundations needed for the settled map. Page numbers are t
 | §§6.1.1–6.1.4, pp. 248–253; §6.3, **Quantum counting**, p. 261 | Marking an event, composing reflections, and viewing search steps as a rotation in a two-dimensional plane. | M06, M08, M17 |
 | Appendix 1, p. 608 | Basic probability language for outcomes, conditional distributions, averages, and uncertainty. | M09 |
 | §§6.6–6.7, pp. 269, 271 | Oracle lower bounds and the distinction between a construction and an optimal resource law. | M11, M22–M28 |
-| §§8.2.2–8.2.3, pp. 357, 360 | An auxiliary system, its measurement, and the induced operators on the retained system. Section 8.2.3 is **Operator-sum representation**. | M04, M14–M16, M23 |
+| §§8.2.2–8.2.3, pp. 357, 360 | An auxiliary system, its measurement, and the induced operators on the retained system. Section 8.2.3 is **Operator-sum representation**. | M04, M14–M16, M23, M25–M27 |
 | §9.1, p. 399; §§9.2.1–9.2.3, pp. 403–415 | Classical and quantum distinguishability and the relation between state overlap and measurement statistics. Section 9.2.1 is **Trace distance**. | M11, M22, M24–M28 |
 
 In the background phase, M01–M08 build the local quantum objects, M09–M11 connect them to inference and limits, and M12 assembles the resource account. The narrative phase, M13–M30, develops the expiring-source problem, its upper construction, its converse, and the meaning of the matched result.
@@ -90,12 +90,30 @@ Sensitivity and cost must both be calculated: order $`k^2`$ probability sensitiv
 
 ### A converse for the complete allowed algorithm
 
-The textbook's distinguishability tools motivate a lower bound, but they do not supply the fresh-source theorem. The [lower-bound page](../science/lower-bounds.md) constructs a phase-twirled one-use hard family, an ordinary rotation obstruction, and a cost-aware Boolean-source adversary. The last argument selects a fixed source sequence from unconditional purified states and counts actual invocations under adaptive stopping.
+The textbook's distinguishability tools motivate a lower bound, but they do not supply the fresh-source theorem. The [lower-bound page](../science/lower-bounds.md) constructs a phase-twirled one-use hard family, an ordinary rotation obstruction, and the earlier cost-aware Boolean-source adversary. The latter selects a fixed source sequence from unconditional purified states and counts actual invocations under adaptive stopping. Its workspace qualification belongs to that construction.
 
-Those quantifiers matter: the algorithm may retain arbitrary memory, the source sequence is fixed rather than reacting to observed outcomes, and the replay-dependent hard family uses $`O(\log(1/\epsilon))`$ local qubits. The accessible worked example does not replace these research-level proof dependencies.
+The stronger [all-time proof](../science/anytime-confidence.md) uses a continuous one-qubit phase-twirled family. Before each source expires, averaging its unknown row, column and global phases leaves an unnormalized channel-valued polynomial in $`p`$. Whole source windows are grouped by the calls actually made; no source crosses a block boundary. Channel-norm derivative bounds and Cantor probability propagation then constrain every committed refinement. This also supplies a simpler fixed-confidence replay converse with one-qubit hard sources. The algorithm may retain arbitrary memory, and the random hard list is fixed before the run. The accessible worked example does not replace these proof dependencies.
+
+
+### From channel foundations to an all-time confidence law
+
+Section 8.2.3 supplies the language of completely positive maps, and §9.2.1 explains operational distinguishability. The extension needs a further analytic step: bound derivatives of an entire averaged instrument while keeping its input memory and all recorded outcomes. Normalizing a selected successful branch would remove the channel property used by that argument.
+
+For $`m=2`$, at most four matrix-entry factors occur in a density term. The finite phase average makes the total powers of both $`\sqrt p`$ and $`\sqrt{1-p}`$ even. Each surviving coefficient is therefore a polynomial of degree at most two in $`p`$. General replay uses blocks of complete windows with at most order $`m`$ actual calls and applies the polynomial derivative bound at channel level. The norm estimate concerns the entire block, including adaptive departures and all failures.
+
+The [shared proof](../science/anytime-confidence.md) supplies these steps, the Cantor norming argument, and disjoint first-error events. With $`A_m(p_0)=\max\{\sqrt{p_0},1/m\}`$, its central conclusion is
+
+```math
+\sum_k \exp\!\left[-D\,T_k\epsilon_k/A_m(p_0)\right]
+\le B\alpha.
+```
+
+Here $`T_k`$ are deterministic actual-call deadlines for geometric committed accuracies $`\epsilon_k`$, and one event of probability at least $`1-\alpha`$ must cover every refinement. This is a restriction on the full schedule. It is not a lower bound at each time or an extra $`\log K`$ charge on one known final target. The channel-polynomial argument, norming estimate, first-error summation and charged RUS schedule are supplied by the projects, rather than attributed to N&C.
+
+The companion [Anytime Quantum Estimation](https://github.com/GoGoKo699/Anytime-Quantum-Estimation) gives the committed-confidence interpretation and the original phase-family proof. Both repositories use this same anchor, with different routes through it.
 
 ## 4. Reading the complete result
 
 The [walkthrough](walkthrough.md) follows the settled map through a complete small circuit and identifies the additional steps needed for the frontier. The [model and theorem](../science/model-and-results.md) remain authoritative for scope; the [resource account](../science/resources-and-robustness.md) separates query counts from known gates, arithmetic, workspace, readout and coherence.
 
-Exact cancellation within one source window permits changing garbage between windows. Mean drift is therefore a different promise from a faulty inverse or general channel noise. The upper construction retains one probe, but its finest phase experiments still require that probe to remain coherent through many source windows. Both facts belong in the result's interpretation.
+Exact cancellation within one source window permits changing garbage between windows. Mean drift is therefore a different promise from a faulty inverse or general channel noise. The all-time theorem here uses zero drift; the terminal drift allowance does not remain sufficient as the requested accuracy tends to zero. The all-time theorem here uses zero drift; the terminal drift allowance does not remain sufficient as the requested accuracy tends to zero. The upper construction retains one probe, but its finest phase experiments still require that probe to remain coherent through many source windows. Both facts belong in the result's interpretation.

@@ -1,0 +1,49 @@
+{
+  "environment": {
+    "numpy": "2.3.5",
+    "python": "3.12.14"
+  },
+  "finite_checks_pass": true,
+  "records": [
+    {
+      "max_residual": 1.1102230246251565e-16,
+      "predicted_max_degree": 1,
+      "same_source_calls": 1
+    },
+    {
+      "max_residual": 1.1102230246251565e-16,
+      "predicted_max_degree": 2,
+      "same_source_calls": 2
+    },
+    {
+      "max_residual": 1.3877787807814457e-16,
+      "predicted_max_degree": 3,
+      "same_source_calls": 3
+    },
+    {
+      "max_residual": 2.498001805406602e-16,
+      "predicted_max_degree": 4,
+      "same_source_calls": 4
+    },
+    {
+      "max_residual": 3.0531133177191805e-16,
+      "predicted_max_degree": 5,
+      "same_source_calls": 5
+    },
+    {
+      "max_residual": 2.498001805406602e-16,
+      "predicted_max_degree": 6,
+      "same_source_calls": 6
+    },
+    {
+      "adaptive_macro_threshold": 2,
+      "max_actual_calls": 3,
+      "max_residual": 1.1102230246251565e-16,
+      "predicted_max_degree": 3
+    }
+  ],
+  "scope": "finite matrix and outcome-adaptive macroblock illustrations; not a proof certificate",
+  "script_sha256": "d01d1892464ccb997619aa6f208a4ad111d3020081a809965bbe7f360ed9d94a",
+  "seed": 20261102,
+  "untwirled_negative_control_degree2_residual": 0.1270167917423423
+}

@@ -1,10 +1,10 @@
 # Thirty milestones for Quantum Mean Replay
 
-This map follows the scientific argument from its mathematical ingredients to the complete resource theorem. It has exactly 30 milestones in two phases: **background/preliminaries** (M01–M12) and **narrative/innovation** (M13–M30). Within each phase, local objects and operations lead to an integrated account. M12 and M30 are the respective synthesis milestones.
+This map follows the scientific argument from its mathematical ingredients to the fixed-confidence resource theorem and its all-time committed-confidence extension. It has exactly 30 milestones in two phases: **background/preliminaries** (M01–M12) and **narrative/innovation** (M13–M30). Within each phase, local objects and operations lead to an integrated account. M12 and M30 are the respective synthesis milestones.
 
 The 12/18 allocation follows the project. Twelve milestones establish a shared language for reversible sampling, measurement, phase geometry, probability and distinguishability. Eighteen then develop the project-specific composition, robust inference and matching converse. The adaptive lower bound receives its own sequence because accounting for actual calls is a substantive part of the result. The allocation does not assume a particular reader's background or pace.
 
-The sole educational anchor is Michael A. Nielsen and Isaac L. Chuang, *Quantum Computation and Quantum Information*, **10th Anniversary Edition (2010)**, abbreviated **N&C** below. Section numbers were verified against the [publisher's contents](https://assets.cambridge.org/97811070/02173/toc/9781107002173_toc.pdf). The [anchor and bridge](anchor-and-bridge.md) explains how those foundations connect to this project. N&C supplies the background; the linked scientific sections supply the source-expiration model and the actual project proofs. In particular, the textbook pointers do not attribute the fresh-source theorem, gearbox composition, robust Ramsey schedule or adaptive window lemma to N&C.
+The sole educational anchor is Michael A. Nielsen and Isaac L. Chuang, *Quantum Computation and Quantum Information*, **10th Anniversary Edition (2010)**, abbreviated **N&C** below. Section numbers were verified against the [publisher's contents](https://assets.cambridge.org/97811070/02173/toc/9781107002173_toc.pdf). The [anchor and bridge](anchor-and-bridge.md) explains how those foundations connect to this project. N&C supplies the background; the linked scientific sections supply the source-expiration model and the actual project proofs. In particular, the textbook pointers do not attribute the fresh-source theorem, gearbox composition, robust Ramsey schedule, adaptive window lemma, channel-polynomial derivative bound or first-error summability to N&C.
 
 Dependencies below name only earlier milestones. They describe the conceptual order of the argument. The authoritative scientific account remains in [science/](../science/README.md); this map does not replace its proofs or extend its assumptions.
 
@@ -348,61 +348,61 @@ Dependencies below name only earlier milestones. They describe the conceptual or
 
 **Source pointers:** N&C §§9.1 and 9.2.1–9.2.3. Project: [Lower bounds, §4.4](../science/lower-bounds.md) and [Resources and robustness, Boundaries of the lower bound and interpretation](../science/resources-and-robustness.md#boundaries-of-the-lower-bound-and-interpretation).
 
-### M25 — Active-call accounting within a source window
+### M25 — Actual calls and complete-window blocks
 
 **Phase:** narrative/innovation.
 
-**Central question:** How can a lower-bound proof represent adaptive stopping without charging unused query slots?
+**Central question:** How can an adaptive proof group queries without charging unused source capacity?
 
-**Understanding target:** A window can be padded with possible slots for analysis, while a projector on classical invocation histories records actual calls. A coherent control within an executed invocation does not discount its physical cost. Expected active-call counts are intermediate analytical quantities under a hard pathwise cap, not a replacement expected-budget assumption.
+**Understanding target:** Forward, inverse and controlled physical invocations count together, while a classically omitted call costs zero. Padding possible slots is a mathematical representation only. For the all-time converse, group whole activated source windows until their actual calls reach a threshold, finish that window, and retain every history and memory register at the boundary. A source is never split across two blocks. The pathwise total cap bounds the number of blocks, including a partial final block.
 
-**Dependencies and story role:** M05, M11, M13 and M20. This sets up the cost convention needed for the replay-dependent window lemma.
+**Dependencies and story role:** M05, M11, M13 and M20. This connects the terminal proof's cost discipline to the all-time analytic argument.
 
-**Conceptual connection:** A mathematical representation of a circuit must preserve the operational resource being bounded.
+**Conceptual connection:** The parameter-dependent map must remain a physical channel while the grouping follows the resource actually paid.
 
-**Source pointers:** N&C §§3.2.1, 4.3–4.4 and 6.7. Project: [Lower bounds, §§1 and 5](../science/lower-bounds.md#5-a-cost-aware-fresh-source-window-lemma).
+**Source pointers:** N&C §§3.2.1, 4.3–4.4 and 8.2.3. Project: [all-time block construction](../science/anytime-confidence.md), and the earlier [cost-aware window lemma](../science/lower-bounds.md#5-a-cost-aware-fresh-source-window-lemma).
 
-### M26 — Comparing auxiliary and actual trajectory costs
-
-**Phase:** narrative/innovation.
-
-**Central question:** How can a helpful auxiliary trajectory be related to the costs of valid hard alternatives?
-
-**Understanding target:** The window proof compares a Boolean source with alternatives that flip one unmarked position. A hybrid bounds their departure from an auxiliary baseline. Orthogonal index sectors and Cauchy–Schwarz convert that departure into a comparison between baseline active-call cost and the average actual cost of the alternatives.
-
-**Dependencies and story role:** M11 and M25. This prevents the final lower bound from depending on an uncontrolled auxiliary cost.
-
-**Conceptual connection:** Localized oracle differences constrain both distinguishability and the changes in an adaptive algorithm's later invocation decisions.
-
-**Source pointers:** N&C §§6.6–6.7 for query-limit background and §§2.1.7, 2.2.5 for the underlying register and projector language. Project: [Lower bounds, §5.1](../science/lower-bounds.md#51-comparing-an-alternative-to-the-auxiliary-baseline).
-
-### M27 — Real-overlap loss and a hard neighboring source
+### M26 — A continuous finite-twirl channel polynomial
 
 **Phase:** narrative/innovation.
 
-**Central question:** Which quantity can telescope across windows while remaining controlled by actual calls?
+**Central question:** What analytic structure survives arbitrary local control of a fresh phase-decorated sampler?
 
-**Understanding target:** The proof bounds the average real decrease of purified-state overlap, rather than an absolute change inferred from a complex average. Combining that bound with the auxiliary-to-actual cost comparison selects a neighboring source whose overlap loss is controlled by the two real trajectories' charged costs. The lemma allows arbitrary incoming memory states.
+**Understanding target:** Use the same continuous probability parameter for an independently phase-twirled one-qubit source in every window. Unknown phases are fixed within a window and drawn once for the complete list. Averaging unnormalized density terms removes odd powers of both square roots, giving a channel-valued polynomial in $`p`$ whose degree is at most the calls in that block. With two calls the degree is at most two. This argument permits arbitrary retained memory and does not condition on a successful RUS event.
 
-**Dependencies and story role:** M11 and M25–M26. This completes the local adversary statement that can be composed across expiring sources.
+**Dependencies and story role:** M04–M05, M13, M23 and M25. This supplies the continuous hard family needed at every refinement scale.
 
-**Conceptual connection:** Choosing the right progress quantity is what makes a local indistinguishability estimate composable.
+**Conceptual connection:** Hidden source phases constrain coherent access without changing the Bernoulli probability being estimated.
 
-**Source pointers:** N&C §§2.5 and 9.2.2–9.2.3 for purified-state overlap and distinguishability. Project: [Lower bounds, §§5.2–5.3](../science/lower-bounds.md#52-bounding-the-average-real-overlap-loss).
+**Source pointers:** N&C §§2.2.7 and 8.2.3 for phase and channel foundations. Project: [finite-twirl polynomial proof](../science/anytime-confidence.md); [one-call twirl](../science/lower-bounds.md#4-one-use-of-a-fresh-source-is-statistically-classical-in-the-worst-case).
 
-### M28 — Fixed hard sequences and the replay lower bound
+### M27 — Replay-sensitive derivatives and neighboring probabilities
 
 **Phase:** narrative/innovation.
 
-**Central question:** How does the local window lemma produce a legal worst-case input for the entire protocol?
+**Central question:** How does the source lifetime constrain probability propagation between nearby means?
 
-**Understanding target:** A Boolean-string sampler encodes neighboring means with a known uniform index preparation and no QRAM. Hard sources are selected from unconditional incoming states to define fixed oracle lists, not in response to realized outcomes. Overlap losses telescope, and the pathwise call cap bounds the summed actual costs. The replay-dependent family uses $`O(\log(1/\epsilon))`$ local qubits; the remaining regime is covered by the ordinary coherent bound.
+**Understanding target:** Explain why a block map is a channel for every real $`p\in[0,1]`$, why its polynomial degree bounds its channel-norm derivatives, and how complete-window grouping converts those bounds to actual total calls. Taylor approximation and Cantor norming then force an event likely on one parameter child to retain average probability on its neighbor, with replay exponent of order $`Tm\epsilon`$. A separate clean-rotation family gives the ordinary exponent of order $`T\epsilon/\sqrt{p_0}`$.
 
-**Dependencies and story role:** M13, M22 and M25–M27. This completes the second lower-bound term with the correct input and workspace quantifiers.
+**Dependencies and story role:** M11, M22 and M25–M26. This proves the missing confidence-sensitive replay obstruction.
 
-**Conceptual connection:** A local adversary becomes a global minimax lower bound only after its input construction and its cost accounting remain valid together.
+**Conceptual connection:** A continuous channel constraint supplies information that a two-point constant-confidence hybrid alone cannot provide.
 
-**Source pointers:** N&C §§6.1.1, 6.7 and 9.2.1 for oracle and distinguishability foundations. Project: [Lower bounds, §§6–7](../science/lower-bounds.md#6-from-the-window-lemma-to-a-fixed-hard-input-sequence).
+**Source pointers:** N&C §§8.2.3 and 9.2.1 for channel and distinguishability language. Project: [derivative and propagation proof](../science/anytime-confidence.md). Markov polynomial bounds and Cantor norming are developed there.
+
+### M28 — All-time first errors and the charged attaining schedule
+
+**Phase:** narrative/innovation.
+
+**Central question:** Which part of the replay frontier pays for trusting every committed refinement?
+
+**Understanding target:** Interpret propagated neighboring-child events as disjoint first errors, giving summability in $`T_k\epsilon_k/A_m(p_0)`$ with $`A_m(p_0)=\max\{\sqrt{p_0},1/m\}`$. Explain the matching summable-confidence Ramsey schedule and its cap on all actual attempts. For $`m=2`$, arbitrarily small $`p_0`$ does not suppress the replay branch's confidence cost. Distinguish the all-scale maximum normalized deadline and asymptotic limsup from a lower bound on every time or on one known final target.
+
+**Dependencies and story role:** M09–M10, M19–M21 and M27. This joins the new lower mechanism to an attainable simultaneous-confidence statement.
+
+**Conceptual connection:** A constant-confidence replay floor plus a phase-only all-time bound would miss the full replay confidence cost; the new propagation lemma is essential.
+
+**Source pointers:** N&C §5.2 and Appendix 1 for phase and probability foundations. Project: [all-time theorem, charged schedule and horizon boundary](../science/anytime-confidence.md).
 
 ### M29 — Implementation, precision and exact-inverse boundaries
 
@@ -410,7 +410,7 @@ Dependencies below name only earlier milestones. They describe the conceptual or
 
 **Central question:** Which physical and computational resources are still required after the query law is established?
 
-**Understanding target:** The ledger charges known reflections, value-to-coin arithmetic, workspace measurement, reset and primitive source implementations separately. Consistent finite-precision encoding with its exact compiled inverse can change the mean within the drift budget; an unmatched physical inverse can destroy the instrument even at zero mean drift. One persistent qubit may require long coherence across many sources. Numerical checks support specific identities and implementations, while the proofs establish the asymptotic theorem.
+**Understanding target:** The ledger charges known reflections, value-to-coin arithmetic, workspace measurement, reset and primitive source implementations separately. Consistent finite-precision encoding with its exact compiled inverse can change the mean within the drift budget; an unmatched physical inverse can destroy the instrument even at zero mean drift. One persistent qubit may require long coherence across many sources. The all-time construction assumes zero drift, since a fixed positive bias cannot remain smaller than indefinitely shrinking error targets. Numerical checks support specific identities and implementations, while the proofs establish the asymptotic theorem.
 
 **Dependencies and story role:** M12–M21 and M28. This reconnects the upper and lower arguments to their actual access, implementation and validation limits.
 
@@ -418,16 +418,17 @@ Dependencies below name only earlier milestones. They describe the conceptual or
 
 **Source pointers:** N&C §§3.2.1, 4.6 and 8.2.2–8.2.3. Project: [Resources and robustness](../science/resources-and-robustness.md), [Replay algorithm, §7](../science/replay-algorithm.md#7-what-must-remain-coherent), and [Verification](../verification/README.md).
 
-### M30 — The matched frontier, resource separation and contribution
+### M30 — The two frontiers and their operational meaning
 
 **Phase:** narrative/innovation.
 
-**Central question:** What does the complete argument establish about local source reuse and global estimation precision?
+**Central question:** What do local replay and a trustworthy continuing record jointly permit?
 
-**Understanding target:** The constructive algorithm and three converse ingredients yield the same minimax orders: the one-use classical endpoint, the replay-limited quantum regime and saturation at the ordinary rare-event coherent rate. The crossover depends on the known probability scale. The result separates local sampler lifetime from retained probe coherence, within the sequential arbitrary-workspace model and its hard actual-query cap. The phase primitive and amplification are inherited; their fresh-source composition and matched adaptive resource law are the project contribution.
+**Understanding target:** State the one-use classical endpoint, the replay-limited quantum regime, ordinary rare-event saturation, and the all-time confidence law. Explain the known-scale crossover and why both quantum branches pay the all-scale confidence overhead. Keep zero drift, exact inverses, classical source retirement, no revisits or coherent SELECT, and long probe coherence explicit. Credit the inherited gearbox and amplification, the original terminal frontier, the companion's phase first-error argument, and the shared channel-polynomial extension separately.
 
-**Dependencies and story role:** M12–M29. This integrates the second phase into the full theorem, its assumptions, its bounded-mean consequence and its proper novelty claim.
+**Dependencies and story role:** M12–M29. This integrates the complete source-replay story and its committed-confidence consequence.
 
-**Conceptual connection:** A resource frontier is explained by the mechanisms achieving each regime and the distinct obstructions that prevent further improvement.
+**Conceptual connection:** A matching resource law requires an implementable interface, a charged attaining algorithm, a converse for the allowed controls, and the correct quantifiers on its outputs.
 
-**Source pointers:** N&C §§3.2.1, 5.2.1, 6.3 and 6.7 as the standard resource, phase-estimation and query-limit frame. Project: [Model and results, §§2–5](../science/model-and-results.md#2-main-theorem-the-local-replay-frontier), [Lower bounds, §7](../science/lower-bounds.md#7-scope-and-relation-to-earlier-lower-bounds), and [Related work](../references/related-work.md).
+**Source pointers:** N&C §§3.2.1, 5.2, 6.1, 6.3, 8.2.3 and 9.2.1. Project: [model and results](../science/model-and-results.md), [all-time confidence](../science/anytime-confidence.md), [resource account](../science/resources-and-robustness.md), and [related work](../references/related-work.md).
+

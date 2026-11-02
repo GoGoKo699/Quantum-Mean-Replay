@@ -4,7 +4,7 @@ Suppose a sequence of devices can prepare quantum samples with the same success 
 
 The project separates two things that an ordinary repeated-preparation algorithm keeps together: the source that creates a sample and the probe that preserves the estimation phase. One forward call and one matching inverse call can transfer the source's scalar probability to the probe. A measurement announces whether the transfer succeeded. On failure, a known correction restores the probe so that a new source can be tried.
 
-This explanation follows the [settled milestone map](milestones.md): M01–M12 provide the background, M13–M21 build the estimator, and M22–M30 explain its limits and resource law. The [anchor bridge](anchor-and-bridge.md) gives the relevant Nielsen–Chuang sections. The small circuit below is a complete worked example, followed by the additional arguments required for the full theorem.
+This explanation follows the [settled milestone map](milestones.md): M01–M12 provide the background, M13–M21 build the estimator, and M22–M30 explain its limits, the fixed-confidence frontier and the all-time extension. The [anchor bridge](anchor-and-bridge.md) gives the relevant Nielsen–Chuang sections. The small circuit below is a complete worked example, followed by the additional arguments required for the full theorem.
 
 ## 1. What the source promises
 
@@ -379,7 +379,7 @@ The [lower-bound proofs](../science/lower-bounds.md) cover algorithms with arbit
 
 Here $`h`$ is the number of candidate positions, $`C_0,C_i`$ are expected actual costs inside that window, and $`\Delta_i`$ is a real-overlap decrease. The auxiliary-to-actual cost comparison is essential when stopping depends on outcomes. The selected sources are determined from unconditional purified states, so the construction produces fixed valid lists rather than an oracle that reacts to realized measurement results.
 
-Summing this inequality and using $`h=\Theta(1/\epsilon)`$ yields the $`\Omega(1/(m\epsilon))`$ term where needed; the ordinary rotation bound covers the remaining regime. The full proof also explains why the lists remain valid and why one hard query budget must handle all the hard families. It uses $`O(\log(1/\epsilon))`$ local source qubits, so the complete frontier is not asserted for every fixed one-qubit source model.
+Summing this inequality and using $`h=\Theta(1/\epsilon)`$ yields the $`\Omega(1/(m\epsilon))`$ term where needed; the ordinary rotation bound covers the remaining regime. The full proof also explains why the lists remain valid and why one hard query budget must handle all the hard families. That earlier construction uses $`O(\log(1/\epsilon))`$ local source qubits. The continuous twirl argument below strengthens the replay converse using one-qubit sources; it is a separate proof with a confidence-sensitive conclusion.
 
 ## 11. The distinction the complete theorem establishes
 
@@ -399,3 +399,45 @@ A reversible pair changes the worst-case precision dependence in the full changi
 Known reflections, the middle coupling, workspace measurement, reversible arithmetic and the implementation of each unknown-source call still have costs. A consistently compiled preparation paired with its exact compiled inverse preserves the instrument identity for its implemented probability; an independently faulty inverse need not. Neither the worked circuit nor the frontier supplies free QRAM, an inverse for an irreversible sampler, or tolerance to an unspecified noise process. Those boundaries are detailed in the [resource account](../science/resources-and-robustness.md).
 
 The circuit example shows precisely where the scalar information goes: successful workspace return adds a phase to the probe, and a failed return supplies a correctable operation. The full theorem quantifies how far that source-local operation can be composed, what replay it requires, and which guarantees remain valid when the source workspace changes.
+
+
+## 12. Keep every committed refinement trustworthy
+
+Now impose zero drift: every source mean is exactly $`p`$. Begin with $`m=2`$ and supplied $`p_0`$, which may be arbitrarily small. Each accepted transfer has the same relative phase
+
+```math
+f(p)=2\arctan(1-2p),\qquad
+2\le |f'(p)|\le4.
+```
+
+Although a small $`p`$ makes a classical success rare, it does not reduce this phase sensitivity. Repeated accepted transfers can resolve $`p`$ to error $`\epsilon`$ with order $`1/\epsilon`$ calls at constant confidence. A known interval $`[p_0,2p_0]`$ supplies a phase center and an initial unambiguous Ramsey length of order $`1/p_0`$.
+
+At refinement $`j`$, use $`L_j=2^jL_0`$ accepted rotations per shot and assign failure budget $`\beta_j=\alpha/[(j+1)(j+2)]`$. Two quadrature measurements, each repeated order $`\log(1/\beta_j)`$ times, give a principal phase. The preceding answer selects its correct lift. If $`S_j`$ denotes the prescribed total accepted rotations at this refinement, cap the actual attempts at
+
+```math
+N_j=\left\lceil4S_j+16\log\frac2{\beta_j}\right\rceil.
+```
+
+The cap costs $`2N_j`$ source calls, including all failures. Cap exhaustion is a possible failure covered by $`\beta_j`$, rather than an event discarded by conditioning. Since the budgets sum to $`\alpha`$, one event certifies every committed answer. Holding the latest answer covers intermediate query counts. General replay uses the same construction after local amplification, with $`2\ell`$ calls per attempt.
+
+The resulting deadlines and errors have order
+
+```math
+T_j=O\!\left(
+\frac{A_m(p_0)}{\epsilon_j}
+[\log(j+2)+\log(1/\alpha)]\right),\qquad
+A_m(p_0)=\max\{\sqrt{p_0},1/m\}.
+```
+
+A matching lower law needs more than combining the old fixed-confidence lower bound with the companion's phase theorem. The [shared proof](../science/anytime-confidence.md) uses a continuous hard family. Decorate each one-qubit Bernoulli rotation with independently chosen finite row, column and global phases, fixed throughout its window. In a two-call density calculation there are at most four matrix-entry factors. Averaging the unknown phases makes the powers of both $`\sqrt p`$ and $`\sqrt{1-p}`$ even, leaving a degree-two polynomial channel in $`p`$. This statement concerns the entire unnormalized instrument, including all outcomes and old quantum memory.
+
+For longer windows, group complete source windows according to their actual calls. Polynomial derivative bounds on these channel maps produce a replay-sensitive Taylor bound. Cantor norming transfers event probability to a neighboring parameter interval, and disjoint first-error events across refinements give
+
+```math
+\sum_j\exp\!\left[-D T_j\epsilon_j/A_m(p_0)\right]
+\le B\alpha.
+```
+
+Both branches of the replay frontier therefore pay the all-time confidence overhead in this schedule sense. For $`m=2`$, even extremely small $`p_0`$ leaves the order $`[\log\log T+\log(1/\alpha)]/T`$ after the initial informative scale. The precise scale-aware upper and its initialization are in the scientific account.
+
+The lower law concerns all normalized deadlines collectively. It does not charge every particular time, nor force an extra logarithm on the last target when that target is specified beforehand. A backward-geometric allocation retains the ordinary terminal cost while permitting inefficient normalized costs at earlier stages. Fixed positive mean drift also cannot sustain shrinking all-time radii: the extension here explicitly assumes zero drift.
