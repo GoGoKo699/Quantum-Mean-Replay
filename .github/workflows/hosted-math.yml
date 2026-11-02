@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           repository: GoGoKo699/Anytime-Quantum-Estimation
-          ref: 4301198d91310e7e607db255e1cf35c2965d08c6
+          ref: 2e800e62938646a3f5490aa047e51ee7cd4001d9
           fetch-depth: 1
           persist-credentials: false
           path: anytime
@@ -34,7 +34,7 @@ jobs:
       - name: Compare actual GitHub mathematics with both pinned sources
         env:
           NODE_PATH: ${{ runner.temp }}/hosted-deps/node_modules
-          AQE_REVISION: 4301198d91310e7e607db255e1cf35c2965d08c6
+          AQE_REVISION: 2e800e62938646a3f5490aa047e51ee7cd4001d9
         run: |
           status=0
           node replay/verification/hosted/capture_hosted_math.cjs --root replay --repository GoGoKo699/Quantum-Mean-Replay --revision "$GITHUB_SHA" --output hosted-evidence/Quantum-Mean-Replay --contract replay/verification/hosted/replay-contract.json || status=1

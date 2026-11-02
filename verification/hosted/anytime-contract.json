@@ -112,19 +112,19 @@
     {
       "path": "science/expiring-samplers.md",
       "index": 38,
-      "source_sha256": "d4d4492e19a1574eba172d887b452e32e92ce897876837ad8918ca795c70db84",
+      "source_sha256": "26f8ad51dec3032c78ca9aca218f6951e888c9fa044fcaafcf955c77b3c3d708",
       "expected_text": "\n  \n    U\n    \n      a\n      ,\n      b\n      ,\n      c\n      ;\n      p\n    \n  \n  =\n  \n    i\n    c\n  \n  \n    Z\n    a\n  \n  \n    R\n    p\n  \n  \n    Z\n    b\n  \n  ,\n  \n    \n  \n  \n    R\n    p\n  \n  =\n  \n    (\n    \n      \n        \n          \n            1\n            \u2212\n            p\n          \n        \n        \n          \u2212\n          \n            p\n          \n        \n      \n      \n        \n          \n            p\n          \n        \n        \n          \n            1\n            \u2212\n            p\n          \n        \n      \n    \n    )\n  \n  .\n"
     },
     {
       "path": "science/expiring-samplers.md",
       "index": 54,
-      "source_sha256": "f1b2d77e14890ef7a7ceba35a299a8bd8178d84778d0b94e73a7957884869609",
+      "source_sha256": "68dd776f797981cd207bc1c513f877c313522d2f65175a82e9520048acbdbe5d",
       "expected_text": "\n  0\n  \u2264\n  \n    f\n    Q\n  \n  (\n  p\n  )\n  \u2264\n  1\n  ,\n  \n    \n  \n  \n    sup\n    \n      p\n      \u2208\n      [\n      0\n      ,\n      1\n      ]\n    \n  \n  |\n  \n    f\n    Q\n    \n      (\n      j\n      )\n    \n  \n  (\n  p\n  )\n  |\n  \u2264\n  [\n  C\n  Q\n  min\n  (\n  m\n  ,\n  Q\n  )\n  \n    ]\n    j\n  \n  .\n"
     },
     {
       "path": "science/expiring-samplers.md",
       "index": 58,
-      "source_sha256": "d561e2f85fa6d7145512837d96fa71319c67e6abebabc8a0a2ddac1d51731251",
+      "source_sha256": "b48574dac8586df20f2957fb83ca65838d064f2eb895b73c57fa809a51ec4116",
       "expected_text": "\n  \n    \u2211\n    k\n  \n  exp\n  \u2061\n  [\n  \u2212\n  D\n  \n    T\n    k\n  \n  min\n  (\n  m\n  ,\n  \n    T\n    k\n  \n  )\n  \n    \u03f5\n    k\n  \n  ]\n  \u2264\n  B\n  \u03b1\n  .\n"
     },
     {
@@ -150,6 +150,78 @@
       "index": 85,
       "source_sha256": "ec6dc652f49b4d5a6ca3f057c8c36fcc655e97819c91bae0b8d704c011a01240",
       "expected_text": "\n  O\n  \n    \n  \n  \n    (\n    \n      \n        \n          A\n          m\n        \n        (\n        \n          p\n          0\n        \n        )\n      \n      \n        \u03f5\n        K\n      \n    \n    log\n    \u2061\n    (\n    1\n    \n      /\n    \n    \u03b1\n    )\n    )\n  \n  .\n"
+    },
+    {
+      "path": "science/model-and-results.md",
+      "index": 1,
+      "source_sha256": "f687bd6be90f9846292026455ea562af7753f1ca611d00f87e8d34146f84f9af",
+      "expected_text": "\n  \n    U\n    \u03b8\n  \n  =\n  \n    diag\n  \n  (\n  1\n  ,\n  \n    e\n    \n      i\n      \u03b8\n    \n  \n  )\n  .\n"
+    },
+    {
+      "path": "science/model-and-results.md",
+      "index": 2,
+      "source_sha256": "9595507a6cb82888b6d4953a1f90cdea929a76016ee0d129a955e89a204cf77f",
+      "expected_text": "\n  \n    inf\n    \n      \u03b8\n      \u2208\n      I\n    \n  \n  \n    Pr\n    \u03b8\n  \n  \n    \n  \n  \n    (\n    |\n    \n      \n        \n          \u03b8\n          ^\n        \n      \n      T\n    \n    \u2212\n    \u03b8\n    |\n    \u2264\n    r\n    (\n    T\n    )\n    \u00a0for every\u00a0\n    T\n    \u2265\n    1\n    )\n  \n  \u2265\n  1\n  \u2212\n  \u03b1\n  ,\n  \n    \n  \n  0\n  <\n  \u03b1\n  <\n  \n    1\n    2\n  \n  .\n"
+    },
+    {
+      "path": "science/model-and-results.md",
+      "index": 3,
+      "source_sha256": "927394b91e30636d105faa1496228c9d44b0fe01e2c3f100b75331421a1cb006",
+      "expected_text": "\n  r\n  (\n  \n    T\n    k\n  \n  )\n  <\n  \n    \n      a\n      \n        3\n        \n          \u2212\n          k\n        \n      \n    \n    2\n  \n  .\n"
+    },
+    {
+      "path": "science/model-and-results.md",
+      "index": 4,
+      "source_sha256": "2b26ebe12fc5174c2fac375ec1f61f43943fe0d16ce008b0682349cd1aecb4bb",
+      "expected_text": "\n  \n    \n      \n        \n          \n            \u2211\n            \n              k\n              \u2265\n              1\n            \n          \n          exp\n          \u2061\n          [\n          \u2212\n          D\n          \n            T\n            k\n          \n          a\n          \n            3\n            \n              \u2212\n              k\n            \n          \n          ]\n          \u2264\n          B\n          \u03b1\n          .\n        \n      \n    \n  \n"
+    },
+    {
+      "path": "science/model-and-results.md",
+      "index": 5,
+      "source_sha256": "1bd6abbe0696ccf73b33b33eb6829d4b21a13398210326ebfd5d6db9f8323c0e",
+      "expected_text": "\n  \n    \n      \n        \n          \n            lim\u2006sup\n            \n              T\n              \u2192\n              \u221e\n            \n          \n          \n            \n              T\n              r\n              (\n              T\n              )\n            \n            \n              log\n              \u2061\n              log\n              \u2061\n              T\n            \n          \n          \u2265\n          \n            c\n            0\n          \n          .\n        \n      \n    \n  \n"
+    },
+    {
+      "path": "science/model-and-results.md",
+      "index": 6,
+      "source_sha256": "7648728eebefd4ee702281e7f2a368289f20d8a12dacf7635bf2e4b191a4bc15",
+      "expected_text": "\n  r\n  (\n  T\n  )\n  \u2264\n  min\n  \n    \n  \n  \n    {\n    a\n    ,\n    C\n    \n      \n        log\n        \u2061\n        log\n        \u2061\n        (\n        \n          e\n          e\n        \n        +\n        T\n        )\n        +\n        log\n        \u2061\n        (\n        1\n        \n          /\n        \n        \u03b1\n        )\n      \n      T\n    \n    }\n  \n  ,\n"
+    },
+    {
+      "path": "science/model-and-results.md",
+      "index": 7,
+      "source_sha256": "0defb08b619b293bd0566c62ee2a5864083eb54a3c6ab64e91caf37b279641a4",
+      "expected_text": "\n  \n    \u2211\n    \n      k\n      =\n      1\n    \n    K\n  \n  \n    e\n    \n      \u2212\n      D\n      \n        T\n        k\n      \n      a\n      \n        3\n        \n          \u2212\n          k\n        \n      \n    \n  \n  \u2264\n  B\n  \u03b1\n  ,\n"
+    },
+    {
+      "path": "science/model-and-results.md",
+      "index": 8,
+      "source_sha256": "1f5ac8909e047cfd658b645704898d9af9abf4eab8230f8713fd710c1d4310c9",
+      "expected_text": "\n  \n    \n      \n        \n          \n            max\n            \n              1\n              \u2264\n              k\n              \u2264\n              K\n            \n          \n          \n            T\n            k\n          \n          a\n          \n            3\n            \n              \u2212\n              k\n            \n          \n          \u2265\n          \n            D\n            \n              \u2212\n              1\n            \n          \n          log\n          \u2061\n          \n            K\n            \n              B\n              \u03b1\n            \n          \n          .\n        \n      \n    \n  \n"
+    },
+    {
+      "path": "science/model-and-results.md",
+      "index": 9,
+      "source_sha256": "7c4b887bf38fbe76df81fdeea2d3bba2f7b2202d2bf9c67f79473462505285a0",
+      "expected_text": "\n  \n    q\n    k\n  \n  =\n  \n    sup\n    \n      \u03b8\n      \u2208\n      I\n    \n  \n  \n    \n      E\n    \n    \u03b8\n  \n  [\n  \n    \u03c4\n    k\n  \n  ]\n  <\n  \u221e\n  .\n"
+    },
+    {
+      "path": "science/model-and-results.md",
+      "index": 10,
+      "source_sha256": "26f28712713008d137731c0008ef1d34bc205a39907c7be12de0cee719f74d57",
+      "expected_text": "\n  \n    \n      \n        \n          \n            \u2211\n            k\n          \n          \n            e\n            \n              \u2212\n              \n                D\n                \u2032\n              \n              \n                q\n                k\n              \n              a\n              \n                3\n                \n                  \u2212\n                  k\n                \n              \n            \n          \n          \u2264\n          \n            B\n            \u2032\n          \n          \u03b1\n          .\n        \n      \n    \n  \n"
+    },
+    {
+      "path": "science/model-and-results.md",
+      "index": 14,
+      "source_sha256": "055fa25ba7431707901c8865752e2a6e54b6845c4ffc458007b225308d18a2bf",
+      "expected_text": "\n  \n    A\n    m\n  \n  (\n  \n    p\n    0\n  \n  )\n  =\n  max\n  {\n  \n    \n      p\n      0\n    \n  \n  ,\n  1\n  \n    /\n  \n  m\n  }\n  .\n"
+    },
+    {
+      "path": "science/model-and-results.md",
+      "index": 17,
+      "source_sha256": "17a08fd86b5b6bdf7a8ba94f2bf1a5d0350d4ea4d8c2c345bb83ae5b4f72d135",
+      "expected_text": "\n  \n    \u2211\n    k\n  \n  exp\n  \n    \n  \n  \n    [\n    \u2212\n    D\n    \n      \n        \n          T\n          k\n        \n        \n          \u03f5\n          k\n        \n      \n      \n        \n          A\n          m\n        \n        (\n        \n          p\n          0\n        \n        )\n      \n    \n    ]\n  \n  \u2264\n  B\n  \u03b1\n  ,\n  \n    \n  \n  0\n  <\n  \u03b1\n  \u2264\n  1\n  \n    /\n  \n  4.\n"
     }
   ]
 }
